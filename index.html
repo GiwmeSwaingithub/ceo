@@ -1,1 +1,3186 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniHostel | Find Your Perfect University Accommodation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <style>
+        :root {
+            --primary: #2A4B7C;
+            --secondary: #FF6B35;
+            --accent: #00A896;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            
+            /* Electric border variables */
+            --electric-border-color: #6348dd;
+            --electric-light-color: oklch(from var(--electric-border-color) l c h);
+            --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
+            --color-neutral-900: oklch(0.145 0 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a365d);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            box-shadow: var(--shadow);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .mobile-nav li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav li:last-child {
+            border-bottom: none;
+        }
+
+        /* Filter Status Bar */
+        .filter-status-bar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: sticky;
+            top: 80px;
+            z-index: 99;
+        }
+
+        .filter-status-bar.active {
+            display: flex;
+        }
+
+        .filter-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-status-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .filter-tag {
+            background-color: var(--accent);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .filter-tag i {
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+
+        .clear-filter-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .clear-filter-btn:hover {
+            background-color: #e05a2a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 75, 124, 0.8), rgba(42, 75, 124, 0.9)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+        :root {
+            --radius: 10px;
+            --bg: #121212;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+        }
+
+        .grid {
+            height: 100vh;
+            width: 100vw;
+            background-color: var(--bg);
+            background-image: radial-gradient(#151515 1px, transparent 1px);
+            background-size: 1rem 1rem;
+            background-position: center center;
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            filter: blur(1px);
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 50px;
+            background: #054d35;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .nav .logo {
+            font-size: 22px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .dekut-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .dekut-link:hover {
+            text-decoration: underline;
+        }
+
+        .nav .nav-links {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+            list-style: none;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.2s linear;
+            white-space: nowrap;
+        }
+
+        .nav.openSearch .nav-links {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav .search-icon {
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            flex-shrink: 0;
+        }
+
+        .nav .navOpenBtn,
+        .nav .navCloseBtn {
+            display: none;
+        }
+
+        /* Search Box Container */
+        #poda {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            width: min(500px, calc(100vw - 200px));
+        }
+
+        .nav.openSearch #poda {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        #main {
+            position: relative;
+            width: 100%;
+            height: 56px;
+        }
+
+        .input {
+            background-color: #010201;
+            border: none;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius);
+            color: white;
+            padding: 0 52px 0 50px;
+            font-size: 16px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .input::placeholder {
+            color: #c0b9c0;
+        }
+
+        .input:focus {
+            outline: 2px solid #2b2752;
+            outline-offset: 0;
+        }
+
+        #input-mask {
+            pointer-events: none;
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            background: linear-gradient(90deg, transparent, black);
+            top: 18px;
+            left: 60px;
+            z-index: 4;
+        }
+
+        #main:focus-within > #input-mask {
+            display: none;
+        }
+
+        #pink-mask {
+            pointer-events: none;
+            width: 30px;
+            height: 20px;
+            position: absolute;
+            background: #cf30aa;
+            top: 10px;
+            left: 5px;
+            filter: blur(20px);
+            opacity: 0.8;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+        }
+
+        #main:hover > #pink-mask {
+            opacity: 0;
+        }
+
+        #search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 4;
+        }
+
+        /* Updated Filter Icon Styles */
+        #filter-icon {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+            height: 40px;
+            width: 38px;
+            isolation: isolate;
+            overflow: hidden;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #161329, black, #1d1b4b);
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        #filter-icon:focus-visible {
+            outline: 2px solid #6356d8;
+            outline-offset: 2px;
+        }
+
+        .filter-text {
+            font-size: 8px;
+            color: #d6d6e6;
+            margin-top: 2px;
+            line-height: 1;
+        }
+
+        .filterBorder {
+            height: 42px;
+            width: 40px;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .filterBorder::before {
+            content: "";
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            filter: brightness(1.35);
+            background-image: conic-gradient(
+                rgba(0, 0, 0, 0),
+                #3d3a4f,
+                rgba(0, 0, 0, 0) 50%,
+                rgba(0, 0, 0, 0) 50%,
+                #3d3a4f,
+                rgba(0, 0, 0, 0) 100%
+            );
+            animation: rotate 4s linear infinite;
+        }
+
+        .white,
+        .border,
+        .darkBorderBg,
+        .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            border-radius: 12px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .white,
+        .border,
+        .darkBorderBg {
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            filter: blur(3px);
+        }
+
+        .white {
+            filter: blur(2px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+        }
+
+        .white::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(83deg);
+            width: 600px;
+            height: 600px;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            filter: brightness(1.4);
+            background-image: conic-gradient(
+                rgba(0, 0, 0, 0) 0%,
+                #a099d8,
+                rgba(0, 0, 0, 0) 8%,
+                rgba(0, 0, 0, 0) 50%,
+                #dfa2da,
+                rgba(0, 0, 0, 0) 58%
+            );
+            transition: transform 2s ease;
+        }
+
+        .border {
+            filter: blur(0.5px);
+        }
+
+        .border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(70deg);
+            width: 600px;
+            height: 600px;
+            filter: brightness(1.3);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-image: conic-gradient(
+                #1c191c,
+                #402fb5 5%,
+                #1c191c 14%,
+                #1c191c 50%,
+                #cf30aa 60%,
+                #1c191c 64%
+            );
+            transition: transform 2s ease;
+        }
+
+        .darkBorderBg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(82deg);
+            width: 600px;
+            height: 600px;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-image: conic-gradient(
+                rgba(0, 0, 0, 0),
+                #18116a,
+                rgba(0, 0, 0, 0) 10%,
+                rgba(0, 0, 0, 0) 50%,
+                #6e1b60,
+                rgba(0, 0, 0, 0) 60%
+            );
+            transition: transform 2s ease;
+        }
+
+        .glow {
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            filter: blur(30px);
+            opacity: 0.4;
+        }
+
+        .glow::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(60deg);
+            width: 999px;
+            height: 999px;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-image: conic-gradient(
+                #000,
+                #402fb5 5%,
+                #000 38%,
+                #000 50%,
+                #cf30aa 60%,
+                #000 87%
+            );
+            transition: transform 2s ease;
+        }
+
+        #poda:hover > .darkBorderBg::before {
+            transform: translate(-50%, -50%) rotate(262deg);
+        }
+
+        #poda:hover > .glow::before {
+            transform: translate(-50%, -50%) rotate(240deg);
+        }
+
+        #poda:hover > .white::before {
+            transform: translate(-50%, -50%) rotate(263deg);
+        }
+
+        #poda:hover > .border::before {
+            transform: translate(-50%, -50%) rotate(250deg);
+        }
+
+        #poda:focus-within > .darkBorderBg::before {
+            transform: translate(-50%, -50%) rotate(442deg);
+            transition: transform 4s ease;
+        }
+
+        #poda:focus-within > .glow::before {
+            transform: translate(-50%, -50%) rotate(420deg);
+            transition: transform 4s ease;
+        }
+
+        #poda:focus-within > .white::before {
+            transform: translate(-50%, -50%) rotate(443deg);
+            transition: transform 4s ease;
+        }
+
+        #poda:focus-within > .border::before {
+            transform: translate(-50%, -50%) rotate(430deg);
+            transition: transform 4s ease;
+        }
+
+        /* Filter Container */
+        .filter-container {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            padding: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 999;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: min(400px, calc(100vw - 40px));
+        }
+
+        .filter-container.active {
+            max-height: 600px;
+            opacity: 1;
+            padding: 25px;
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            display: block;
+            color: #e0e0e0;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .filter-select:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #4b16ad;
+        }
+
+        .filter-select:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #6356d8;
+            box-shadow: 0 0 0 3px rgba(99, 86, 216, 0.2);
+        }
+
+        .filter-select option {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 10px;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: translate(-50%, -50%) rotate(450deg);
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .nav {
+                padding: 15px 30px;
+            }
+
+            #poda {
+                width: min(450px, calc(100vw - 150px));
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav .navOpenBtn,
+            .nav .navCloseBtn {
+                display: block;
+                color: #fff;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .nav {
+                padding: 15px 20px;
+            }
+
+            .nav .logo {
+                font-size: 18px;
+            }
+
+            .nav .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                height: 100%;
+                max-width: 280px;
+                width: 100%;
+                padding-top: 100px;
+                row-gap: 30px;
+                flex-direction: column;
+                background-color: #11101d;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease;
+                z-index: 1001;
+            }
+
+            .nav.openNav .nav-links {
+                left: 0;
+            }
+
+            .nav .navCloseBtn {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            #poda {
+                width: calc(100vw - 100px);
+            }
+
+            .filter-container {
+                width: calc(100vw - 40px);
+                top: 90px;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .input {
+                font-size: 14px;
+                padding: 0 50px 0 45px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav .logo {
+                font-size: 16px;
+                max-width: 150px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            #poda {
+                width: calc(100vw - 80px);
+            }
+
+            .input {
+                font-size: 13px;
+                padding: 0 50px 0 45px;
+            }
+
+            .filter-container {
+                width: calc(100vw - 30px);
+            }
+            
+            .filter-text {
+                font-size: 7px;
+            }
+        }
+        /* Hostel Listing */
+        .hostel-listing {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            margin-top: 100px;
+        }
+
+        .results-count {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .image-action-buttons {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          display: flex;
+          gap: 8px;
+          z-index: 20;
+        }
+
+        .image-action-btn {
+          background: rgba(12, 2, 48, 0.938);
+          color: #FFFFFF;
+          border: none;
+          padding: 6px 10px;
+          border-radius: 8px;
+          font-size: 0.8rem;
+          backdrop-filter: blur(4px);
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          cursor: pointer;
+        }
+
+        .image-action-btn i {
+          font-size: 0.9rem;
+        }
+
+        .image-action-btn.view-btn {
+          padding: 6px 12px;
+        }
+
+        .hostel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Updated Hostel Card Styles with Electric Border */
+        .hostel-card-container {
+            padding: 2px;
+            border-radius: 24px;
+            position: relative;
+            background: linear-gradient(
+                    -30deg,
+                    var(--gradient-color),
+                    transparent,
+                    var(--gradient-color)
+                ),
+                linear-gradient(
+                    to bottom,
+                    var(--color-neutral-900),
+                    var(--color-neutral-900)
+                );
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+            height: 500px;
+            width: 100%;
+        }
+
+        .hostel-card-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hostel-card-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .hostel-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hostel-border-outer {
+            border: 2px solid rgba(72, 87, 221, 0.5);
+            border-radius: 24px;
+            padding-right: 4px;
+            padding-bottom: 4px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hostel-main-card {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            border: 2px solid var(--electric-border-color);
+            margin-top: -4px;
+            margin-left: -4px;
+            filter: url(#turbulent-displace);
+            background: white;
+            overflow: hidden;
+        }
+
+        /* Glow effects */
+        .hostel-glow-layer-1 {
+            border: 2px solid rgba(221, 132, 72, 0.6);
+            border-radius: 24px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            filter: blur(1px);
+        }
+
+        .hostel-glow-layer-2 {
+            border: 2px solid var(--electric-light-color);
+            border-radius: 24px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            filter: blur(4px);
+        }
+
+        /* Overlay effects */
+        .hostel-overlay-1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            opacity: 1;
+            mix-blend-mode: overlay;
+            transform: scale(1.1);
+            filter: blur(16px);
+            background: linear-gradient(
+                -30deg,
+                white,
+                transparent 30%,
+                transparent 70%,
+                white
+            );
+        }
+
+        .hostel-overlay-2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            opacity: 0.5;
+            mix-blend-mode: overlay;
+            transform: scale(1.1);
+            filter: blur(16px);
+            background: linear-gradient(
+                -30deg,
+                white,
+                transparent 30%,
+                transparent 70%,
+                white
+            );
+        }
+
+        /* Background glow */
+        .hostel-background-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            filter: blur(32px);
+            transform: scale(1.1);
+            opacity: 0.3;
+            z-index: -1;
+            background: linear-gradient(
+                -30deg,
+                var(--electric-light-color),
+                transparent,
+                var(--electric-border-color)
+            );
+        }
+
+        /* Hostel content */
+        .hostel-content-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            color: white;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 24px;
+        }
+
+        .hostel-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .hostel-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .hostel-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .hostel-location:hover {
+            color: var(--accent);
+        }
+
+        .hostel-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .hostel-price {
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .room-type {
+            background: rgba(115, 2, 126, 0.918);
+            color:  #FFFFFF;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+.hostel-utilities {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.3rem;
+    padding: 0px 0;
+    scroll-behavior: smooth;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    margin-bottom: 0.5rem;
+}
+
+.hostel-utilities::-webkit-scrollbar {
+    display: none;
+}
+
+.utility-tag {
+    white-space: nowrap;
+    background: rgba(0, 168, 150, 0.2);
+    color: var(--accent);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    flex-shrink: 0; /* prevents tag compression */
+}
+
+
+        /* Updated Contact Button with Glass Effect */
+        .contact-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: radial-gradient(
+                    47.2% 50% at 50.39% 88.37%,
+                    rgba(255, 255, 255, 0.12) 0%,
+                    rgba(255, 255, 255, 0) 100%
+                ),
+                rgba(255, 255, 255, 0.04);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            margin-top: auto;
+        }
+
+        .contact-btn:hover {
+            background: radial-gradient(
+                    47.2% 50% at 50.39% 88.37%,
+                    rgba(51, 202, 5, 0.12) 0%,
+                    rgba(11, 146, 7, 0) 100%
+                ),
+                rgba(234, 238, 5, 0.08);
+        }
+
+        .contact-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1px;
+            background: linear-gradient(
+                150deg,
+                rgba(7, 231, 7, 0.48) 16.73%,
+                rgba(38, 4, 235, 0.08) 30.2%,
+                rgba(184, 224, 5, 0.08) 68.2%,
+                rgba(234, 7, 241, 0.6) 81.89%
+            );
+            border-radius: inherit;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .view-btn {
+            background: rgba(1, 1, 27, 0.911);
+            color: #FFFFFF;
+        }
+
+        .view-btn:hover {
+            background: rgba(0, 168, 150, 0.3);
+        }
+
+        .share-btn {
+            background: rgba(19, 19, 1, 0.959);
+            color: var(--secondary);
+        }
+
+        .share-btn:hover {
+            background: rgba(255, 107, 53, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .modal-title {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-map {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+
+        /* Gallery Modal */
+        .gallery-modal {
+            max-width: 800px;
+            width: 95%;
+            height: 80vh;
+        }
+
+        .gallery-container {
+            position: relative;
+            height: 60%;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-slide.active {
+            opacity: 1;
+        }
+
+        .gallery-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-dot.active {
+            background: var(--primary);
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .gallery-arrow:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .gallery-arrow.prev {
+            left: 10px;
+        }
+
+        .gallery-arrow.next {
+            right: 10px;
+        }
+
+        /* Share Modal */
+        .share-modal {
+            max-width: 400px;
+        }
+
+        .share-url {
+            display: flex;
+            margin: 1rem 0;
+        }
+
+        .share-url input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: #1a365d;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .share-buttons button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .share-facebook {
+            background: #3b5998;
+            color: white;
+        }
+
+        .share-twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray);
+            display: none;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hostel-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hostel-card-container {
+                height: 480px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .filter-status-bar {
+                top: 70px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid"></div>
+    
+    <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <div class="logo">
+            <span><a href="https://www.dkut.ac.ke" class="dekut-link">DEKUT</a> Hostels</span>
+        </div>
+
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+
+        <div id="poda" role="search">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="darkBorderBg" aria-hidden="true"></div>
+            <div class="darkBorderBg" aria-hidden="true"></div>
+            <div class="darkBorderBg" aria-hidden="true"></div>
+            <div class="white" aria-hidden="true"></div>
+            <div class="border" aria-hidden="true"></div>
+            
+            <div id="main">
+                <label for="search-input" class="visually-hidden">Search</label>
+                <input
+                    id="search-input"
+                    placeholder="Search hostels..."
+                    type="text"
+                    name="text"
+                    class="input"
+                    aria-label="Search"
+                    autocomplete="off"
+                />
+                <div id="input-mask" aria-hidden="true"></div>
+                <div id="pink-mask" aria-hidden="true"></div>
+                
+                <!-- Filter Icon with text -->
+                <div class="filterBorder" aria-hidden="true"></div>
+                <button id="filter-icon" type="button" aria-label="Open filters">
+                    <svg
+                        preserveAspectRatio="none"
+                        height="20"
+                        width="20"
+                        viewBox="4.8 4.56 14.832 15.408"
+                        fill="none"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M8.16 6.65002H15.83C16.47 6.65002 16.99 7.17002 16.99 7.81002V9.09002C16.99 9.56002 16.7 10.14 16.41 10.43L13.91 12.64C13.56 12.93 13.33 13.51 13.33 13.98V16.48C13.33 16.83 13.1 17.29 12.81 17.47L12 17.98C11.24 18.45 10.2 17.92 10.2 16.99V13.91C10.2 13.5 9.97 12.98 9.73 12.69L7.52 10.36C7.23 10.08 7 9.55002 7 9.20002V7.87002C7 7.17002 7.52 6.65002 8.16 6.65002Z"
+                            stroke="#d6d6e6"
+                            stroke-width="1"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                    </svg>
+                    <span class="filter-text">Filter</span>
+                </button>
+                
+                <!-- Search Icon -->
+                <div id="search-icon" aria-hidden="true">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        height="24"
+                        fill="none"
+                        class="feather feather-search"
+                        aria-hidden="true"
+                    >
+                        <circle stroke="url(#search)" r="8" cy="11" cx="11"></circle>
+                        <line stroke="url(#searchl)" y2="16.65" y1="22" x2="16.65" x1="22"></line>
+                        <defs>
+                            <linearGradient gradientTransform="rotate(50)" id="search">
+                                <stop stop-color="#f8e7f8" offset="0%"></stop>
+                                <stop stop-color="#b6a9b7" offset="50%"></stop>
+                            </linearGradient>
+                            <linearGradient id="searchl">
+                                <stop stop-color="#b6a9b7" offset="0%"></stop>
+                                <stop stop-color="#837484" offset="50%"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filter Status Bar -->
+    <div class="filter-status-bar" id="filter-status-bar">
+        <div class="filter-status">
+            <span class="filter-status-label">Filters Applied:</span>
+            <div id="filter-tags-container"></div>
+        </div>
+        <button class="clear-filter-btn" id="clear-filter-btn">
+            <i class="fas fa-times"></i> Clear All Filters
+        </button>
+    </div>
+
+    <div class="filter-container" id="filter-container">
+            <div class="filter-group">
+                <label class="filter-label">Price Range</label>
+                <select class="filter-select" id="price-range">
+                    <option value="all">All Prices</option>
+                    <option value="0-100">$0 - $100</option>
+                    <option value="100-200">$100 - $200</option>
+                    <option value="200-300">$200 - $300</option>
+                    <option value="300+">$300+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Location</label>
+                <select class="filter-select" id="location">
+                    <option value="all">All Locations</option>
+                    <option value="Gate A">Gate A</option>
+                    <option value="Boma">Boma/Gate c</option>
+                    <option value="Embassy">Embassy</option>
+                    <option value="Internal">Internal Hostel</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Room Type</label>
+                <select class="filter-select" id="room-type">
+                    <option value="all">All Room Types</option>
+                    <option value="single">Single Room</option>
+                    <option value="shared">Shared Room</option>
+                    <option value="apartment">Apartment</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Occupancy</label>
+                <select class="filter-select" id="occupancy">
+                    <option value="all">Any Occupancy</option>
+                    <option value="stay-alone">Stay Alone</option>
+                    <option value="shared">Shared</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Utilities</label>
+                <select class="filter-select" id="utilities">
+                    <option value="all">All Utilities</option>
+                    <option value="wifi">WiFi</option>
+                    <option value="laundry">Laundry</option>
+                    <option value="kitchen">Kitchen</option>
+                    <option value="gym">Gym</option>
+                </select>
+            </div>
+        </div>
+    <!-- Hostel Listing -->
+    <section class="hostel-listing">
+        <div class="results-count" id="results-count"></div>
+        <div class="hostel-grid" id="hostel-grid">
+            <!-- Hostel cards will be loaded here -->
+        </div>
+        <div class="no-results" id="no-results">
+            <i class="fas fa-search"></i>
+            <h3>No hostels found</h3>
+            <p>Try adjusting your search criteria or filters</p>
+        </div>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading more hostels...</p>
+        </div>
+    </section>
+
+    <!-- Location Modal -->
+    <div class="modal" id="location-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title" id="modal-title">Location Details</h2>
+            <p id="modal-description"></p>
+            <div class="modal-map" id="modal-map">
+                Interactive Map Placeholder
+            </div>
+            <p><strong>Coordinates:</strong> <span id="modal-coordinates"></span></p>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="modal" id="gallery-modal">
+        <div class="modal-content gallery-modal">
+            <button class="modal-close" id="gallery-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title" id="gallery-title">Hostel Gallery</h2>
+            <div class="gallery-container" id="gallery-container">
+                <!-- Gallery slides will be added here -->
+            </div>
+            <div class="gallery-nav" id="gallery-nav">
+                <!-- Navigation dots will be added here -->
+            </div>
+            <button class="gallery-arrow prev" id="gallery-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="gallery-arrow next" id="gallery-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="modal" id="share-modal">
+        <div class="modal-content share-modal">
+            <button class="modal-close" id="share-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title">Share Hostel</h2>
+            <p>Share this hostel with others using the link below:</p>
+            <div class="share-url">
+                <input type="text" id="share-url" readonly>
+                <button class="copy-btn" id="copy-url">Copy</button>
+            </div>
+            <div class="share-buttons">
+                <button class="share-facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+                <button class="share-twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="share-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>UniHostel</h3>
+                <p>Your trusted platform for finding the perfect university accommodation since 2023.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Hostels</a></li>
+                    <li><a href="#">Universities</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 University Ave, Campus Town</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@unihostel.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 UniHostel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SVG for filter effects -->
+    <svg class="svg-container" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+        <defs>
+            <filter id="turbulent-displace" colorInterpolationFilters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
+                <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
+                    <animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
+                <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
+                    <animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="2" />
+                <feOffset in="noise1" dx="0" dy="0" result="offsetNoise3">
+                    <animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="2" />
+                <feOffset in="noise2" dx="0" dy="0" result="offsetNoise4">
+                    <animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                </feOffset>
+                <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
+                <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
+                <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+                <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B" />
+            </filter>
+        </defs>
+    </svg>
+
+    <script>
+        // Sample hostel data with enhanced location info
+        const hostelData = [
+            {
+                id: 1,
+                name: "Internal Hostels",
+                location: "Inside Main Campus",
+                description: "Located inside DEDAN KIMATHI UNIVERSITY MAIN CAMPUS,It is the government policy that admissions into public universities should not pegged on available accommodation space. Of about 7000 students, the University can barely accommodate 152 ladies and 246 men, making the total available spaces to be 398. The Directorate of Students' Welfare (DSW)  is tasked with the allocation process.Allocation is based on students with special conditions such as medical, disability, physical challenges etc. are also considered",
+                coordinates: "40.7128° N, 74.0060° W",
+                price: 5000,
+                priceAlone: 7500,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Laundry", "Gym", "Study Room"],
+                roomType: "Single Room",
+                occupancy: "stay-alone",
+                contact: ""
+            },
+            {
+                id: 2,
+                name: "KIMATHI STUDENT CENTRE",
+                location: "Gate A",
+                description: "Kimathi Student Centre has rooms with single bed, double deckers, two twin beds, three twin beds, four twin beds,and partitioned rooms for two beds.4,500 per person sharing & 9,000 Single Occupancy.",
+                coordinates: "40.7589° N, 73.9851° W",
+                price: 4500,
+                priceAlone: 9000,
+                image: "https://i.postimg.cc/BnV0MLHx/kimathistudent-centre.webp",
+                images: [
+                    "https://i.postimg.cc/zG7m3dJf/gate.png",
+                    "https://i.postimg.cc/zGJ6mnn1/P1290019.jpg",
+                    "https://i.postimg.cc/jqPFL8XM/P1290022.jpg",
+                    "https://i.postimg.cc/nzvGcWJr/launry-lines.png",
+                    "https://i.postimg.cc/QC81NxSX/P1280977.jpg",
+                    "https://i.postimg.cc/8P3J9H8j/P1280976.jpg",
+                    "https://i.postimg.cc/j5ZCX66p/P1280975.jpg",
+                    "https://i.postimg.cc/pdvTMcsN/P1280995.jpg",
+                    "https://i.postimg.cc/J0s75fzk/P1280993.jpg",
+                    "https://i.postimg.cc/25CzKb5k/P1280974.jpg",
+                    ""
+                ],
+                utilities: ["Free WiFi","Free Bed with mattress", "Free Water","Hot Water", "Free Electricity", "FingerPrint Secutity"],
+                roomType: "single Room",
+                occupancy: "shared",
+                contact: "0746797393,0100492929"
+            },
+            {
+                id: 4,
+                name: "MT Kenya Hostels",
+                location: "Boma",
+                description: "Nestled in a quiet suburban neighborhood, this hostel offers a peaceful study environment while still being accessible to campus via public transport.",
+                coordinates: "40.7505° N, 73.9934° W",
+                price: 85,
+                priceAlone: 120,
+                image: "https://i.postimg.cc/J7HSLrvn/mtkenyahostel.webp",
+                images: [
+                    "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Laundry", "Kitchen"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0726969255"
+            },
+            {
+                id: 5,
+                name: "Maisha Hostels",
+                location: "Boma",
+                description: "Modern accommodations designed for tech students, with high-speed internet and dedicated study spaces. Close to the engineering and computer science buildings.",
+                coordinates: "JX47+4F Nyeri",
+                price: 5000,
+                priceAlone: 10000,
+                image: "https://i.postimg.cc/tT2N8MG6/2024-06-17.webp",
+                images: [
+                   
+                ],
+                utilities: ["WiFi", "Gym", "Study Room", "Game Room"],
+                roomType: "Apartment",
+                occupancy: "stay-alone",
+                contact: "0745409929"
+            },
+            {
+                id: 6,
+                name: "La Duvet Hostels",
+                location: "Boma",
+                description: "Eco-friendly accommodation with green spaces and sustainable features. A tranquil environment perfect for focused study.",
+                coordinates: "JX47+RQ Nyeri",
+                price: 75,
+                priceAlone: 110,
+                image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzIdi--z9ORZNDXczwcvq6eNpnF9E4WDV23czQ0mH2omgvjIPMOytffoNHMnWrHEQXefM79QgCe_XVxWwx-nEYOXqdQnkp4xIfGNYuXUG1opGKryF4Y9QKVWt1BzlX8-5-s3OC28Q=s680-w680-h510-rw",
+                images: [
+                     "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwcMtZrc72Wpfho6iMCORDlvbt4fUVslL2VJks3zY4kOgenEaaCjyfSYYB-kOzQQmuCKjLfM4izaRsWq9pFrztx3ChQPEKj0-s2xDCQEiKiNk8LoAiMhZq-8JwILaeia6eUe-tB=s680-w680-h510-rw",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwLvx_PR0mLY4KR6hOaDiKfabjx5YEiowEt2QEMLrR3XdvypcDgk_bpw63fq86mV525R0-7j9SbzejI72nT-e2wJxHSHw7TwmarwgLoRYwGlonYnJZxUdHvQU8g_Df18ZJCYL9f=s680-w680-h510-rw",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzonkzSe9GacKur8Du1jGOo39tf7s_DME9ela8BMuTlJn-LR1u7ZF52AAAlZAVvcZaFGH9zDDcur55wdWuSH-lo2Ec4TL-piLxxVoVTNDmfwySeORNv1y_YAv3HlI1Y5-WS5TTm=w200-h200-n-k-no-nu",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwbLSoAeRWpcaNPMVdwBWVOI_3bE-fgYjvh1FqTh-oTgyFHnlOIKNOdNVUPlpcl09oJw6Kk03Ls_-WlFSEy680F70o6bnhv3XCgBkgYKl8_6-tNnx6piFUwKstBEBh9QR7hXVPm_Q=w200-h250-n-k-no-nu",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzvb4vsGpk22LqcaMRBw9l9jJJokblus6K5YuroXYdzqw_mhavuOKNdoYfmkWb2Y_BVqiyCng3NMVBVmcVISnwGLvAjig1krIRM4whdHWvexFR9HS67ZxZOI8sWue0zd13SNKNT=w200-h250-n-k-no-nu",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzZyxQ8v3KS4kemF31hD_2H8B5C_A2xMMcZ2M76Dj382hLMLKO4eUGtPh2oeTvYlU9DSlAheBOM_UyTXt-SZyD4T2dKRxAyg_9owm5UYZxRznjhnP2FEs0bvlKVgpg_EWopXPuQ=w200-h333-n-k-no-nu",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyxUQJNHI3xlhPQ3xGOSoFvQDcckEXma-vTEzWPxA0H4uZMP9cnOhNJBwkPlyXKLbQXLc4tcvbufNBFQyjCR4Qx4FMtA8kUSiqQ9R3kmqYtRp7DHK51ZIg5OnvVCoPDzoQ8t9Jf=w200-h250-n-k-no-nu",
+                    "https://lh3.googleusercontent.com/p/AF1QipNWzMMSNwmWocxHZYMFfftOel8gMmGakZ96O1yp=s680-w680-h510-rw",
+                    "https://lh3.googleusercontent.com/p/AF1QipNHvITzdkn4Ei5XlkQpUZ9hAVTnebkjjMx0Jxdr=s680-w680-h510-rw",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxtmqSIRbZIMzXnUOyqit2AyBjLcP0LlHAD_Ox8YAtB4NslRNteMY-tBvTyHKaMMs-2Fw9Ond1KIw4N65HJmv7eElw7MB16khJ2oSplu4br00QGERQIi5oIAHQ2Damrel5ZjQ8y=w200-h250-n-k-no-nu",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzb-dgq6EqYgQFwh2cXrMPeswk0P8da0SY_OAzNE9GQKGj_c6aKpmtVmh4WbjczPfUaOyMvU1vtdo0tKH2kRyU5p562k6HuaD7ClXf-3O5Cqcj6uJ4eVLQ7v16aw1Acj4dca_Em=w200-h333-n-k-no-nu",
+                    "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyYv9gslfInjgFXBNkx8-vdtlXNRx_Cxi4TzhMN-UrVDn8j_OwQGDyaADy2PbJjIwa_yx4-3zETKjYowYXL9gG6Ih_0UeG9uFAyIn-4vYdyOFYy7y-soDkHsZBMTumRIAs20rj0=s680-w680-h510-rw",
+                    ""
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0718862632"
+            },
+            {
+                id: 7,
+                name: "Kens Hostel",
+                location: "Boma",
+                description: "Contemporary urban living with easy access to public transportation. Ideal for students who need to commute to different campus locations.",
+                coordinates: "40.7614° N, 73.9776° W",
+                price: 4500,
+                priceAlone: 9000,
+                image: "https://i.postimg.cc/ZRb64xTN/image.webp",
+                images: [
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Gym", "Common Area", "Study Room"],
+                roomType: "Single Room",
+                occupancy: "Shared",
+                contact: "0704835981"
+            },
+            {
+                id: 8,
+                name: "Mimshack Students Residence",
+                location: "Boma",
+                description: "accommodation option for both male and female students.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Male/Female", "Kitchen", "Study Room"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0724693216"
+            },
+             {
+                id: 9,
+                name: "Sunrise Hostel",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Male/Female", "Kitchen", "Study Room"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0790739067"
+            },
+             {
+                id: 10,
+                name: "Arch Bishop Kirima Hostels",
+                location: "Nyeri View",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://i.postimg.cc/63tFKg2R/parking-lot-upper-view-of-room-blocks.webp",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Female only"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0700008875,0721611281,0707557091,kirima.conference@gmail.com"
+            },
+            {
+                id: 3,
+                name: "Grace Hostel",
+                location: "Gate A",
+                description: "Fully furnished room (Kitchen with necessary cookingappliances and kitchen accessories, Living area, study table,chair, tv, a bed with a mattress and bedding.) and free Wifi.Kshs. 20,000 p.m,Refundable Deposit of Kshs.5,000,Kshs.1,300 per day",
+                coordinates: "40.7282° N, 73.9942° W",
+                price: 20000,
+                priceAlone: 20000,
+                image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://i.postimg.cc/MK83Jy14/IMG-20240520-WA0004.jpg",
+                    "https://i.postimg.cc/dVf8wYzr/IMG-20240520-WA0007.jpg",
+                    "https://i.postimg.cc/7hX2c83G/IMG-20240520-WA0003.jpg",
+                    "https://i.postimg.cc/sD6W4zfn/IMG-20240520-WA0018.jpg",
+                    "https://i.postimg.cc/4dgHxNwm/IMG-20240520-WA0011.jpg",
+                    "https://i.postimg.cc/4NgG2HyY/IMG-20240520-WA0009.jpg",
+                    "https://i.postimg.cc/5y5hWpy0/IMG-20240520-WA0017.jpg",
+                    ""
+                ],
+                utilities: ["WiFi", "Gym", "Cafeteria", "Study Room"],
+                roomType: "Bedsitter",
+                occupancy: "stay-alone",
+                contact: "0795580924,0753844727"
+            },
+             {
+                id: 11,
+                name: "Tamaal Hostel",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Laundry", "Kitchen", "Study Room"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0726176330"
+            },
+             {
+                id: 12,
+                name: "Lolan Scholars",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Laundry", "Kitchen", "Study Room"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0711905530"
+            },
+             {
+                id: 13,
+                name: "M & M",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi", "Female only"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0722356852"
+            },
+            {
+                id: 14,
+                name: "Blessed Court",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0721696864"
+            },
+            {
+                id: 15,
+                name: "Ngamia",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0712157355"
+            },
+            {
+                id: 16,
+                name: "Samrice Hostel",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Paybill 400200, A/c 177416IName",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://i.postimg.cc/fbw6n10R/image-(1).webp",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0722605957"
+            },
+            {
+                id: 17,
+                name: "Inovators Apartment",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0703646454,0797513484,0718933806"
+            },
+            {
+                id: 18,
+                name: "Achievers Hostel Ltd",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.KCB 522522 A/c 5975215, Equity 247247 A/c 835300",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0742964281"
+            },
+             {
+                id: 19,
+                name: "Stepna Hostel",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Equity A/c 0080195018500",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0723753475"
+            },
+             {
+                id: 20,
+                name: "Tamaal Hostel A",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0726176330"
+            },
+             {
+                id: 21,
+                name: "Tamaal Hostel B",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0726176330"
+            },
+             {
+                id: 22,
+                name: "Der Komfort",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Till No. 522522, A/c 6017791 RM No.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0794800544"
+            },
+             {
+                id: 23,
+                name: "Paradise Hostel",
+                location: "Gate A",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Paybill 400222 A/c 106240#",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0710950822"
+            },
+             {
+                id: 24,
+                name: "Baraka Hostel",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.247247 A/c No. 453700#room No",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0724441219"
+            },
+             {
+                id: 25,
+                name: "Shirikisho Hostel",
+                location: "Boma",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.A/c 01103979837900 Co-operative",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0713889599"
+            },
+             {
+                id: 26,
+                name: "Zion City Hostel",
+                location: "Embassy",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Till No. 5644093",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0702276550"
+            },
+             {
+                id: 27,
+                name: "Eunice Ladies Hostel",
+                location: "Embassy",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Till 54156301",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0721322172"
+            },
+             {
+                id: 28,
+                name: "Stacy’s Hostel",
+                location: "Embassy",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0712901677"
+            },
+             {
+                id: 29,
+                name: "Sunset View",
+                location: "Embassy",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Paybill 400200 A/C 1032468#",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0723447638"
+            },
+            {
+                id: 30,
+                name: "Steward Hostel",
+                location: "Embassy",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Equity Acc. 0110190304101",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0710386154"
+            },
+            {
+                id: 31,
+                name: "Valley Creek Hostel",
+                location: "Embassy",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.Pay Bill: 972901",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 110,
+                priceAlone: 160,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0740671690"
+            },
+            {
+                id: 32,
+                name: "Angies Hostels",
+                location: "Angie's Hostels, Mathari",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 3000,
+                priceAlone: 6000,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0728543703///"
+            },
+            {
+                id: 33,
+                name: "Autums",
+                location: "Nyeri View Hostel, Nyeri",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 5000,
+                priceAlone: 10000,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0728543703///"
+            },
+            {
+                id: 34,
+                name: "Evergreen Hostels",
+                location: "Nyeri View Hostel, Nyeri",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 3500,
+                priceAlone: 7000,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0728543703///"
+            },
+            {
+                id: 35,
+                name: "Lush",
+                location: "Nyeri View Hostel, Nyeri",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 3500,
+                priceAlone: 7000,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0728543703///"
+            },
+            {
+                id: 36,
+                name: "Serene Hostels (Mama Kens)",
+                location: "Nyeri View Hostel, Nyeri",
+                description: "A serene living space right on campus with beautiful garden views. Perfect for students who value both convenience and tranquility.",
+                coordinates: "40.7295° N, 73.9965° W",
+                price: 4500,
+                priceAlone: 9000,
+                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                ],
+                utilities: ["WiFi"],
+                roomType: "Shared Room",
+                occupancy: "shared",
+                contact: "0728543703///"
+            }
+        ];
+
+        // DOM Elements
+        const hostelGrid = document.getElementById('hostel-grid');
+        const loadingElement = document.getElementById('loading');
+        const noResultsElement = document.getElementById('no-results');
+        const resultsCountElement = document.getElementById('results-count');
+        const searchInput = document.getElementById('search-input');
+        const priceFilter = document.getElementById('price-range');
+        const locationFilter = document.getElementById('location');
+        const roomTypeFilter = document.getElementById('room-type');
+        const occupancyFilter = document.getElementById('occupancy');
+        const utilitiesFilter = document.getElementById('utilities');
+        const locationModal = document.getElementById('location-modal');
+        const modalClose = document.getElementById('modal-close');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalCoordinates = document.getElementById('modal-coordinates');
+        const nav = document.querySelector(".nav");
+        const searchIcon = document.querySelector("#searchIcon");
+        const navOpenBtn = document.querySelector(".navOpenBtn");
+        const navCloseBtn = document.querySelector(".navCloseBtn");
+        const filterIcon = document.querySelector("#filter-icon");
+        const filterContainer = document.querySelector("#filter-container");
+        const filterStatusBar = document.getElementById('filter-status-bar');
+        const filterTagsContainer = document.getElementById('filter-tags-container');
+        const clearFilterBtn = document.getElementById('clear-filter-btn');
+        
+        // Gallery elements
+        const galleryModal = document.getElementById('gallery-modal');
+        const galleryClose = document.getElementById('gallery-close');
+        const galleryContainer = document.getElementById('gallery-container');
+        const galleryNav = document.getElementById('gallery-nav');
+        const galleryPrev = document.getElementById('gallery-prev');
+        const galleryNext = document.getElementById('gallery-next');
+        const galleryTitle = document.getElementById('gallery-title');
+        
+        // Share elements
+        const shareModal = document.getElementById('share-modal');
+        const shareClose = document.getElementById('share-close');
+        const shareUrl = document.getElementById('share-url');
+        const copyUrl = document.getElementById('copy-url');
+
+        // Variables for lazy loading
+        let currentIndex = 0;
+        const itemsPerLoad = 4;
+        let filteredHostels = [...hostelData];
+        let observer;
+        let searchTimeout;
+        let currentGalleryHostel = null;
+        let currentSlideIndex = 0;
+        let isFromSharedLink = false;
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateResultsCount();
+            loadMoreHostels();
+            setupEventListeners();
+            setupIntersectionObserver();
+            
+            // Check for URL parameters
+            checkUrlParams();
+        });
+
+        // Set up event listeners for search and filters
+        function setupEventListeners() {
+            // Debounced search
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(applyFilters, 500);
+            });
+            
+            priceFilter.addEventListener('change', applyFilters);
+            locationFilter.addEventListener('change', applyFilters);
+            roomTypeFilter.addEventListener('change', applyFilters);
+            occupancyFilter.addEventListener('change', applyFilters);
+            utilitiesFilter.addEventListener('change', applyFilters);
+            
+            // Clear filter button
+            clearFilterBtn.addEventListener('click', clearAllFilters);
+            
+            // Modal close
+            modalClose.addEventListener('click', function() {
+                locationModal.classList.remove('active');
+            });
+
+            // Close modal when clicking outside
+            locationModal.addEventListener('click', function(e) {
+                if (e.target === locationModal) {
+                    locationModal.classList.remove('active');
+                }
+            });
+
+            // Gallery events
+            galleryClose.addEventListener('click', function() {
+                galleryModal.classList.remove('active');
+            });
+            
+            galleryModal.addEventListener('click', function(e) {
+                if (e.target === galleryModal) {
+                    galleryModal.classList.remove('active');
+                }
+            });
+            
+            galleryPrev.addEventListener('click', showPrevSlide);
+            galleryNext.addEventListener('click', showNextSlide);
+            
+            // Share events
+            shareClose.addEventListener('click', function() {
+                shareModal.classList.remove('active');
+            });
+            
+            shareModal.addEventListener('click', function(e) {
+                if (e.target === shareModal) {
+                    shareModal.classList.remove('active');
+                }
+            });
+            
+            copyUrl.addEventListener('click', copyShareUrl);
+
+            // Toggle search bar
+            searchIcon.addEventListener("click", () => {
+                nav.classList.toggle("openSearch");
+                nav.classList.remove("openNav");
+                
+                // Close filters when closing search
+                if (!nav.classList.contains("openSearch")) {
+                    filterContainer.classList.remove("active");
+                }
+                
+                if (nav.classList.contains("openSearch")) {
+                    return searchIcon.classList.replace("uil-search", "uil-times");
+                }
+                searchIcon.classList.replace("uil-times", "uil-search");
+            });
+
+            // Toggle filter container
+            filterIcon.addEventListener("click", () => {
+                filterContainer.classList.toggle("active");
+            });
+
+            // Open mobile nav
+            navOpenBtn.addEventListener("click", () => {
+                nav.classList.add("openNav");
+                nav.classList.remove("openSearch");
+                filterContainer.classList.remove("active");
+                searchIcon.classList.replace("uil-times", "uil-search");
+            });
+
+            // Close mobile nav
+            navCloseBtn.addEventListener("click", () => {
+                nav.classList.remove("openNav");
+            });
+
+            // Close filter when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!filterIcon.contains(e.target) && 
+                    !filterContainer.contains(e.target) && 
+                    filterContainer.classList.contains("active")) {
+                    filterContainer.classList.remove("active");
+                }
+            });
+        }
+
+        // Apply filters and search
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const priceValue = priceFilter.value;
+            const locationValue = locationFilter.value;
+            const roomTypeValue = roomTypeFilter.value;
+            const occupancyValue = occupancyFilter.value;
+            const utilitiesValue = utilitiesFilter.value;
+
+            filteredHostels = hostelData.filter(hostel => {
+                // Search term filter
+                const matchesSearch = searchTerm === '' || 
+                    hostel.name.toLowerCase().includes(searchTerm) ||
+                    hostel.location.toLowerCase().includes(searchTerm);
+                
+                // Price filter
+                let matchesPrice = true;
+                if (priceValue !== 'all') {
+                    const priceToCheck = occupancyValue === 'stay-alone' && hostel.priceAlone ? hostel.priceAlone : hostel.price;
+                    
+                    if (priceValue === '0-100') {
+                        matchesPrice = priceToCheck <= 100;
+                    } else if (priceValue === '100-200') {
+                        matchesPrice = priceToCheck > 100 && priceToCheck <= 200;
+                    } else if (priceValue === '200-300') {
+                        matchesPrice = priceToCheck > 200 && priceToCheck <= 300;
+                    } else if (priceValue === '300+') {
+                        matchesPrice = priceToCheck > 300;
+                    }
+                }
+                
+                // Location filter
+                const matchesLocation = locationValue === 'all' || 
+                    hostel.location.toLowerCase().includes(locationValue);
+                
+                // Room type filter
+                const matchesRoomType = roomTypeValue === 'all' || 
+                    hostel.roomType === roomTypeValue;
+                
+                // Occupancy filter
+                const matchesOccupancy = occupancyValue === 'all' || 
+                    hostel.occupancy === occupancyValue;
+                
+                // Utilities filter
+                const matchesUtilities = utilitiesValue === 'all' || 
+                    hostel.utilities.includes(utilitiesValue);
+                
+                return matchesSearch && matchesPrice && matchesLocation && 
+                       matchesRoomType && matchesOccupancy && matchesUtilities;
+            });
+            
+            // If user came from a shared link, prioritize shared hostels
+            if (isFromSharedLink) {
+                filteredHostels.sort((a, b) => {
+                    if (a.occupancy === 'shared' && b.occupancy !== 'shared') return -1;
+                    if (a.occupancy !== 'shared' && b.occupancy === 'shared') return 1;
+                    return 0;
+                });
+            }
+            
+            // Reset and reload
+            currentIndex = 0;
+            hostelGrid.innerHTML = '';
+            updateResultsCount();
+            updateFilterStatus();
+            loadMoreHostels();
+        }
+
+        // Update filter status bar
+        function updateFilterStatus() {
+            const activeFilters = [];
+            
+            // Check search
+            if (searchInput.value.trim() !== '') {
+                activeFilters.push({
+                    type: 'search',
+                    value: searchInput.value,
+                    label: `Search: "${searchInput.value}"`
+                });
+            }
+            
+            // Check price filter
+            if (priceFilter.value !== 'all') {
+                activeFilters.push({
+                    type: 'price',
+                    value: priceFilter.value,
+                    label: `Price: ${priceFilter.options[priceFilter.selectedIndex].text}`
+                });
+            }
+            
+            // Check location filter
+            if (locationFilter.value !== 'all') {
+                activeFilters.push({
+                    type: 'location',
+                    value: locationFilter.value,
+                    label: `Location: ${locationFilter.options[locationFilter.selectedIndex].text}`
+                });
+            }
+            
+            // Check room type filter
+            if (roomTypeFilter.value !== 'all') {
+                activeFilters.push({
+                    type: 'roomType',
+                    value: roomTypeFilter.value,
+                    label: `Room Type: ${roomTypeFilter.options[roomTypeFilter.selectedIndex].text}`
+                });
+            }
+            
+            // Check occupancy filter
+            if (occupancyFilter.value !== 'all') {
+                activeFilters.push({
+                    type: 'occupancy',
+                    value: occupancyFilter.value,
+                    label: `Occupancy: ${occupancyFilter.options[occupancyFilter.selectedIndex].text}`
+                });
+            }
+            
+            // Check utilities filter
+            if (utilitiesFilter.value !== 'all') {
+                activeFilters.push({
+                    type: 'utilities',
+                    value: utilitiesFilter.value,
+                    label: `Utility: ${utilitiesFilter.options[utilitiesFilter.selectedIndex].text}`
+                });
+            }
+            
+            // Update filter status bar
+            if (activeFilters.length > 0) {
+                filterStatusBar.classList.add('active');
+                
+                // Update filter tags
+                filterTagsContainer.innerHTML = '';
+                activeFilters.forEach(filter => {
+                    const filterTag = document.createElement('div');
+                    filterTag.className = 'filter-tag';
+                    filterTag.innerHTML = `
+                        ${filter.label}
+                        <i class="fas fa-times" data-filter-type="${filter.type}"></i>
+                    `;
+                    filterTagsContainer.appendChild(filterTag);
+                    
+                    // Add event listener to remove individual filter
+                    const removeBtn = filterTag.querySelector('i');
+                    removeBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        removeFilter(filter.type);
+                    });
+                });
+            } else {
+                filterStatusBar.classList.remove('active');
+            }
+        }
+
+        // Remove individual filter
+        function removeFilter(filterType) {
+            switch(filterType) {
+                case 'search':
+                    searchInput.value = '';
+                    break;
+                case 'price':
+                    priceFilter.value = 'all';
+                    break;
+                case 'location':
+                    locationFilter.value = 'all';
+                    break;
+                case 'roomType':
+                    roomTypeFilter.value = 'all';
+                    break;
+                case 'occupancy':
+                    occupancyFilter.value = 'all';
+                    break;
+                case 'utilities':
+                    utilitiesFilter.value = 'all';
+                    break;
+            }
+            
+            applyFilters();
+        }
+
+        // Clear all filters
+        function clearAllFilters() {
+            searchInput.value = '';
+            priceFilter.value = 'all';
+            locationFilter.value = 'all';
+            roomTypeFilter.value = 'all';
+            occupancyFilter.value = 'all';
+            utilitiesFilter.value = 'all';
+            
+            applyFilters();
+        }
+
+        // Update results count
+        function updateResultsCount() {
+            const count = filteredHostels.length;
+            resultsCountElement.textContent = `${count} ${count === 1 ? 'hostel' : 'hostels'} found`;
+            
+            if (count === 0) {
+                noResultsElement.style.display = 'block';
+            } else {
+                noResultsElement.style.display = 'none';
+            }
+        }
+
+        // Load more hostels for lazy loading
+        function loadMoreHostels() {
+            const endIndex = Math.min(currentIndex + itemsPerLoad, filteredHostels.length);
+            
+            if (currentIndex >= filteredHostels.length) {
+                loadingElement.style.display = 'none';
+                return;
+            }
+            
+            loadingElement.style.display = 'block';
+            
+            // Simulate loading delay for demonstration
+            setTimeout(() => {
+                for (let i = currentIndex; i < endIndex; i++) {
+                    const hostel = filteredHostels[i];
+                    createHostelCard(hostel);
+                }
+                
+                currentIndex = endIndex;
+                
+                if (currentIndex >= filteredHostels.length) {
+                    loadingElement.style.display = 'none';
+                } else {
+                    loadingElement.style.display = 'block';
+                }
+            }, 500);
+        }
+
+        // Create hostel card element with electric border styling
+        function createHostelCard(hostel) {
+            const cardContainer = document.createElement('div');
+            cardContainer.className = 'hostel-card-container';
+            
+            // Determine which price to show based on occupancy filter
+            const occupancyValue = occupancyFilter.value;
+            const showAlonePrice = occupancyValue === 'stay-alone' && hostel.priceAlone;
+            const displayPrice = showAlonePrice ? hostel.priceAlone : hostel.price;
+            const priceLabel = showAlonePrice ? '(Stay Alone)' : '(Per Head)';
+            
+            cardContainer.innerHTML = `
+                <div class="hostel-card-inner">
+                    <div class="hostel-border-outer">
+                        <div class="hostel-main-card"></div>
+                    </div>
+                    <div class="hostel-glow-layer-1"></div>
+                    <div class="hostel-glow-layer-2"></div>
+                    <div class="hostel-overlay-1"></div>
+                    <div class="hostel-overlay-2"></div>
+                    <div class="hostel-background-glow"></div>
+                    <div class="hostel-content-container">
+                        <img src="${hostel.image}" alt="${hostel.name}" class="hostel-image">
+                        <div class="image-action-buttons">
+                            <button class="image-action-btn share-btn" data-hostel-id="${hostel.id}">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="image-action-btn view-btn" data-hostel-id="${hostel.id}">
+                                <i class="fas fa-images"></i> View More Photos
+                            </button>
+                                                        <div class="room-type">${hostel.roomType}</div>
+
+                        </div>
+                        <h3 class="hostel-name">${hostel.name}</h3>
+                        <div class="hostel-location" data-hostel-id="${hostel.id}">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>${hostel.location}</span>
+                        </div>
+                        <div class="hostel-details">
+                            <div class="hostel-price">KSH ${displayPrice}/month ${priceLabel}</div>
+                        </div>
+                        <div class="hostel-utilities">
+                            ${hostel.utilities.map(utility => 
+                                `<span class="utility-tag">${utility}</span>`
+                            ).join('')}
+                        </div>
+<a 
+  href="https://wa.me/254769486775?text=${encodeURIComponent(
+    `Hello DEKUTCONNECT, I'm interested in ${hostel.name}.\n\nOf Description: ${hostel.description}\nOccupancy: ${hostel.occupancy}`
+  )}" 
+  class="contact-btn" 
+  target="_blank">
+  Inquire
+</a>
+                    </div>
+                </div>
+            `;
+            
+            hostelGrid.appendChild(cardContainer);
+            
+            // Add location click handler
+            const locationElement = cardContainer.querySelector('.hostel-location');
+            locationElement.addEventListener('click', function() {
+                showLocationModal(hostel);
+            });
+            
+            // Add gallery button handler
+            const galleryBtn = cardContainer.querySelector('.view-btn');
+            galleryBtn.addEventListener('click', function() {
+                showGalleryModal(hostel);
+            });
+            
+            // Add share button handler
+            const shareBtn = cardContainer.querySelector('.share-btn');
+            shareBtn.addEventListener('click', function() {
+                showShareModal(hostel);
+            });
+            
+            // Add to observer for scroll animation
+            observer.observe(cardContainer);
+        }
+
+        // Show location modal
+        function showLocationModal(hostel) {
+            modalTitle.textContent = hostel.name;
+            modalDescription.textContent = hostel.description;
+            modalCoordinates.textContent = hostel.coordinates;
+            locationModal.classList.add('active');
+        }
+
+        // Show gallery modal
+        function showGalleryModal(hostel) {
+            currentGalleryHostel = hostel;
+            currentSlideIndex = 0;
+            galleryTitle.textContent = `${hostel.name} - Gallery`;
+            
+            // Clear previous content
+            galleryContainer.innerHTML = '';
+            galleryNav.innerHTML = '';
+            
+            // Add slides
+            hostel.images.forEach((image, index) => {
+                const slide = document.createElement('div');
+                slide.className = `gallery-slide ${index === 0 ? 'active' : ''}`;
+                slide.innerHTML = `<img src="${image}" alt="${hostel.name} - Image ${index + 1}">`;
+                galleryContainer.appendChild(slide);
+                
+                // Add navigation dot
+                const dot = document.createElement('div');
+                dot.className = `gallery-dot ${index === 0 ? 'active' : ''}`;
+                dot.dataset.index = index;
+                dot.addEventListener('click', () => goToSlide(index));
+                galleryNav.appendChild(dot);
+            });
+            
+            galleryModal.classList.add('active');
+        }
+
+        // Show next slide in gallery
+        function showNextSlide() {
+            if (!currentGalleryHostel) return;
+            
+            const totalSlides = currentGalleryHostel.images.length;
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            goToSlide(currentSlideIndex);
+        }
+
+        // Show previous slide in gallery
+        function showPrevSlide() {
+            if (!currentGalleryHostel) return;
+            
+            const totalSlides = currentGalleryHostel.images.length;
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            goToSlide(currentSlideIndex);
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+            if (!currentGalleryHostel) return;
+            
+            const slides = document.querySelectorAll('.gallery-slide');
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentSlideIndex = index;
+        }
+
+        // Show share modal
+        function showShareModal(hostel) {
+            // Generate unique URL for this hostel
+            const baseUrl = window.location.origin + window.location.pathname;
+            const shareUrlValue = `${baseUrl}?hostel=${hostel.id}`;
+            shareUrl.value = shareUrlValue;
+            shareModal.classList.add('active');
+        }
+
+        // Copy share URL to clipboard
+        function copyShareUrl() {
+            shareUrl.select();
+            document.execCommand('copy');
+            
+            // Visual feedback
+            const originalText = copyUrl.textContent;
+            copyUrl.textContent = 'Copied!';
+            setTimeout(() => {
+                copyUrl.textContent = originalText;
+            }, 2000);
+        }
+
+        // Check URL parameters for direct hostel links
+        function checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hostelId = urlParams.get('hostel');
+            
+            if (hostelId) {
+                const hostel = hostelData.find(h => h.id == hostelId);
+                if (hostel) {
+                    // Set flag to indicate user came from a shared link
+                    isFromSharedLink = true;
+                    
+                    // Set occupancy filter to show shared hostels first
+                    occupancyFilter.value = 'shared';
+                    
+                    // Apply filters to show shared hostels first
+                    applyFilters();
+                    
+                    // Scroll to hostel and highlight it
+                    setTimeout(() => {
+                        showGalleryModal(hostel);
+                    }, 1000);
+                }
+            }
+        }
+
+        // Intersection Observer for scroll animations and lazy loading
+        function setupIntersectionObserver() {
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // If this is the loading element, load more hostels
+                        if (entry.target.id === 'loading') {
+                            loadMoreHostels();
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe the loading element for lazy loading
+            observer.observe(loadingElement);
+        }
+    </script>
+</body>
+</html>
