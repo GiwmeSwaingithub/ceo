@@ -476,15 +476,21 @@ article { display: none; }
 /*NAVBAR*/
 
 .navbar {
-    position: fixed;
-    top: 5px;
-    left: 5%;
-    width: 80%;
-    background: var(--glass-bg); 
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow2);
-    border: 1px solid var(--glass-border); 
-    z-index: 5;
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  padding: 6px 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow2);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
     span1 {
       background: var(--gradient-color-bg);
