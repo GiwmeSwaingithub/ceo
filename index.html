@@ -1,537 +1,2423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CEO EDUNIAPPS-LINCON NJOGU NYAGA</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Added Boxicons for social media icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="https://i.postimg.cc/D0TcPKCR/hero.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Enhanced SEO Meta Tags -->
+  <title>Lincon Njogu Nyaga | Android Developer & Full-Stack Engineer from Kenya</title>
+  <meta name="description" content="Lincon Njogu is a passionate software engineer specializing in Android development with Kotlin & Jetpack Compose, full-stack web development, and scalable backend systems. Based in Nyeri, Kenya.">
+  <meta name="keywords" content="Android Developer Kenya, Kotlin Developer, Jetpack Compose, Full-Stack Developer Nyeri, Mobile App Development, Software Engineer Kenya, React Developer, Node.js Developer">
+  <meta name="author" content="Lincon Njogu Nyaga">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://yourwebsite.com/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="Lincon Njogu Nyaga - Android & Full-Stack Developer">
+  <meta property="og:description" content="Professional software engineer specializing in Android development with Kotlin, Jetpack Compose, and full-stack web engineering.">
+  <meta property="og:image" content="./assets/images/my-avatar.png">
+  <meta property="og:site_name" content="Lincon Njogu Portfolio">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://yourwebsite.com/">
+  <meta name="twitter:title" content="Lincon Njogu Nyaga - Android & Full-Stack Developer">
+  <meta name="twitter:description" content="Professional software engineer specializing in Android development and full-stack web engineering.">
+  <meta name="twitter:image" content="./assets/images/my-avatar.png">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lincon Njogu Nyaga",
+    "jobTitle": "Software Engineer",
+    "description": "Android Developer & Full-Stack Engineer",
+    "url": "https://yourwebsite.com",
+    "sameAs": [
+      "https://github.com/yourprofile",
+      "https://linkedin.com/in/yourprofile",
+      "https://twitter.com/yourprofile"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nyeri",
+      "addressCountry": "Kenya"
+    },
+    "knowsAbout": ["Android Development", "Kotlin", "Jetpack Compose", "Full-Stack Development", "React", "Node.js"]
+  }
+  </script>
+
+  <!-- Preconnect & DNS Prefetch for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      /* Dark Theme Colors */
+      --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 50%, 32%) 3%, hsl(0, 39%, 39%) 97%);
+      --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(155, 52%, 39%, 0) 100%), hsl(240, 2%, 13%);
+      --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(200, 100%, 50%) 0%, hsla(180, 100%, 45%, 0) 50%);
+      --bg-gradient-yellow-2: linear-gradient(135deg, hsla(200, 100%, 50%, 0.251) 0%, hsla(180, 100%, 45%, 0) 59.86%), hsl(240, 2%, 13%);
+      --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+      --text-gradient-yellow: linear-gradient(to right, hsl(200, 100%, 50%), hsl(180, 100%, 45%));
+      
+      --greeniez: hsl(61, 81%, 35%);
+      --greenie: hsl(150, 88%, 45%);
+      --jet: hsl(0, 0%, 22%);
+      --onyx: hsl(240, 1%, 17%);
+      --eerie-black-1: hsl(240, 65%, 10%);
+      --eerie-black-2: hsl(240, 2%, 12%);
+      --smoky-black: hsl(0, 0%, 7%);
+      --white-1: hsl(0, 0%, 100%);
+      --white-2: hsl(0, 0%, 98%);
+      --orange-yellow-crayola: hsl(200, 100%, 50%);
+      --vegas-gold: hsl(200, 70%, 58%);
+      --light-gray: hsl(0, 0%, 84%);
+      --light-gray-70: hsla(0, 0%, 84%, 0.7);
+      --bittersweet-shimmer: hsl(200, 70%, 51%);
+      
+      --ff-poppins: 'Poppins', sans-serif;
+      --fs-1: 24px; --fs-2: 18px; --fs-3: 17px; --fs-4: 16px;
+      --fs-5: 15px; --fs-6: 14px; --fs-7: 13px; --fs-8: 11px;
+      --fw-300: 300; --fw-400: 400; --fw-500: 500; --fw-600: 600; --fw-700: 700;
+      
+      --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+      --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+      --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+      --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+      --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+      
+      --transition-1: 0.25s ease;
+      --transition-2: 0.5s ease-in-out;
+    }
+
+    /* Light Theme */
+    [data-theme="light"] {
+      --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 100%) 3%, hsl(0, 0%, 98%) 97%);
+      --bg-gradient-jet: linear-gradient(to bottom right, hsla(0, 0%, 100%, 0.9) 0%, hsla(0, 0%, 98%, 0) 100%), hsl(0, 0%, 100%);
+      --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(200, 100%, 50%) 0%, hsla(180, 100%, 45%, 0) 50%);
+      --bg-gradient-yellow-2: linear-gradient(135deg, hsla(200, 100%, 50%, 0.1) 0%, hsla(180, 100%, 45%, 0) 59.86%), hsl(0, 0%, 100%);
+      --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 90%) 0%, hsla(0, 0%, 90%, 0) 50%);
+      --text-gradient-yellow: linear-gradient(to right, hsl(200, 100%, 45%), hsl(180, 100%, 40%));
+      --greeniez: hsl(150, 88%, 45%);
+      --greenie: hsl(61, 81%, 35%);
+      --jet: hsl(0, 0%, 88%);
+      --onyx: hsl(0, 0%, 96%);
+      --eerie-black-1: hsl(0, 0%, 100%);
+      --eerie-black-2: hsl(0, 0%, 98%);
+      --smoky-black: hsl(0, 0%, 96%);
+      --white-1: hsl(0, 0%, 12%);
+      --white-2: hsl(0, 0%, 15%);
+      --orange-yellow-crayola: hsl(200, 100%, 45%);
+      --vegas-gold: hsl(200, 70%, 48%);
+      --light-gray: hsl(0, 0%, 35%);
+      --light-gray-70: hsla(0, 0%, 35%, 0.7);
+      --bittersweet-shimmer: hsl(200, 70%, 45%);
+      --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.08);
+      --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.08);
+      --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.08);
+      --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.06);
+      --shadow-5: 0 24px 80px hsla(0, 89%, 44%, 0.08);
+    }
+
+    /* ===== THEME TOGGLE & TTS CONTROLS ===== */
+    .theme-controls {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .control-btn {
+      background: var(--bg-gradient-jet);
+      border: 1px solid var(--jet);
+      border-radius: 12px;
+      width: 48px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-1);
+      box-shadow: var(--shadow-2);
+      color: var(--white-2);
+      font-size: 16px;
+    }
+
+    .control-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-3);
+      border-color: var(--orange-yellow-crayola);
+    }
+
+    .control-btn.active {
+      background: var(--text-gradient-yellow);
+      border-color: var(--orange-yellow-crayola);
+      color: var(--smoky-black);
+    }
+
+    .tts-btn.speaking {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      animation: blink 1.2s step-end infinite;
+      color: var(--light-gray);
+    }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+    /* ===== GLOW BUTTON ===== */
+    .glow-on-hover {
+      border: none;
+      outline: none;
+      color: #fff;
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 14px;
+      transition: all var(--transition-1);
+    }
+
+    .glow-on-hover:before {
+      content: '';
+      background: linear-gradient(45deg, #00d4ff, #00ffd5, #48ff00, #00d4ff);
+      position: absolute;
+      top: -2px;
+      left:-2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      border-radius: 14px;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-gradient-jet);
+      left: 0;
+      top: 0;
+      border-radius: 14px;
+    }
+
+    @keyframes glowing {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    a { text-decoration: none; }
+    li { list-style: none; }
+    img, ion-icon, a, button, time, span { display: block; }
+    button { font: inherit; background: none; border: none; text-align: left; cursor: pointer; }
+    input, textarea { display: block; width: 100%; background: none; font: inherit; }
+    ::selection { background: var(--orange-yellow-crayola); color: var(--smoky-black); }
+    :focus { outline-color: var(--orange-yellow-crayola); }
+    html { font-family: var(--ff-poppins); scroll-behavior: smooth; }
+    body { 
+      background: var(--smoky-black); 
+      transition: background var(--transition-2), color var(--transition-2);
+    }
+
+    /* ===== REUSED STYLES ===== */
+    .sidebar, article {
+      background: var(--eerie-black-2);
+      border: 1px solid var(--jet);
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: var(--shadow-1);
+      z-index: 1;
+      transition: all var(--transition-2);
+    }
+
+    .separator { 
+      width: 100%; 
+      height: 1px; 
+      background: var(--jet); 
+      margin: 16px 0; 
+      transition: background var(--transition-2); 
+    }
+
+    .icon-box {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      width: 30px; 
+      height: 30px;
+      border-radius: 8px;
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      font-size: 16px;
+      color: var(--orange-yellow-crayola);
+      box-shadow: var(--shadow-1);
+      z-index: 1;
+      transition: all var(--transition-1);
+    }
+
+    .icon-box::before {
+      content: "";
+      position: absolute; 
+      inset: 1px;
+      background: var(--eerie-black-1);
+      border-radius: inherit; 
+      z-index: -1;
+      transition: background var(--transition-2);
+    }
+
+    .icon-box ion-icon { --ionicon-stroke-width: 35px; }
+
+    article { display: none; }
+    article.active { display: block; animation: fade 0.5s ease backwards; }
+    @keyframes fade { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+    .h2, .h3, .h4, .h5 { 
+      color: var(--white-2); 
+      text-transform: capitalize; 
+      transition: color var(--transition-2); 
+    }
+
+    .h2 { font-size: var(--fs-1); }
+    .h3 { font-size: var(--fs-2); }
+    .h4 { font-size: var(--fs-4); }
+    .h5 { font-size: var(--fs-7); font-weight: var(--fw-500); }
+
+    .article-title { 
+      position: relative; 
+      padding-bottom: 7px; 
+    }
+
+    .article-title::after {
+      content: "";
+      position: absolute; 
+      bottom: 0; 
+      left: 0;
+      width: 30px; 
+      height: 3px;
+      background: var(--text-gradient-yellow);
+      border-radius: 3px;
+    }
+
+    .has-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+    .has-scrollbar::-webkit-scrollbar-track { background: var(--onyx); border-radius: 5px; }
+    .has-scrollbar::-webkit-scrollbar-thumb { background: var(--orange-yellow-crayola); border-radius: 5px; }
+    .has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+
+    .content-card {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      padding: 15px; 
+      padding-top: 45px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-2);
+      cursor: pointer; 
+      z-index: 1;
+      transition: all var(--transition-1);
+    }
+
+    .content-card::before {
+      content: "";
+      position: absolute; 
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit; 
+      z-index: -1;
+      transition: background var(--transition-2);
+    }
+
+    /* ===== MAIN ===== */
+    main { 
+      margin: 15px 12px; 
+      margin-bottom: 75px; 
+      min-width: 259px; 
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar { 
+      margin-bottom: 15px; 
+      max-height: 112px; 
+      overflow: hidden; 
+      transition: var(--transition-2); 
+    }
+
+    .sidebar.active { max-height: 650px; }
+
+    .sidebar-info {
+      position: relative;
+      display: flex; 
+      justify-content: flex-start; 
+      align-items: center; 
+      gap: 15px;
+    }
+
+    .avatar-box { 
+      background: var(--bg-gradient-onyx); 
+      border-radius: 20px;
+      transition: all var(--transition-2);
+    }
+
+    .info-content .name { 
+      color: var(--white-2); 
+      font-size: var(--fs-3); 
+      font-weight: var(--fw-500); 
+      letter-spacing: -0.25px; 
+      margin-bottom: 10px;
+      transition: color var(--transition-2);
+    }
+
+    .info-content .title { 
+      color: var(--white-1); 
+      background: var(--onyx); 
+      font-size: var(--fs-8); 
+      font-weight: var(--fw-300); 
+      width: max-content; 
+      padding: 3px 12px; 
+      border-radius: 8px;
+      transition: all var(--transition-2);
+    }
+
+    .info_more-btn {
+      position: absolute; 
+      top: -15px; 
+      right: -15px;
+      border-radius: 0 15px;
+      font-size: 13px; 
+      color: var(--orange-yellow-crayola);
+      background: var(--border-gradient-onyx);
+      padding: 10px; 
+      box-shadow: var(--shadow-2);
+      transition: var(--transition-1); 
+      z-index: 1;
+    }
+
+    .info_more-btn::before { 
+      content: ""; 
+      position: absolute; 
+      inset: 1px; 
+      border-radius: inherit; 
+      background: var(--bg-gradient-jet); 
+      transition: var(--transition-2); 
+      z-index: -1; 
+    }
+
+    .info_more-btn:hover, .info_more-btn:focus { 
+      background: var(--bg-gradient-yellow-1); 
+    }
+
+    .info_more-btn:hover::before, .info_more-btn:focus::before { 
+      background: var(--bg-gradient-yellow-2); 
+    }
+
+    .info_more-btn span { display: none; }
+
+    .sidebar-info_more { 
+      opacity: 0; 
+      visibility: hidden; 
+      transition: var(--transition-2); 
+    }
+
+    .sidebar.active .sidebar-info_more { 
+      opacity: 1; 
+      visibility: visible; 
+    }
+
+    .contacts-list { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 16px; 
+    }
+
+    .contact-item { 
+      min-width: 100%; 
+      display: flex; 
+      align-items: center; 
+      gap: 16px; 
+    }
+
+    .contact-info { 
+      max-width: calc(100% - 46px); 
+      width: calc(100% - 46px); 
+    }
+
+    .contact-title { 
+      color: var(--light-gray-70); 
+      font-size: var(--fs-8); 
+      text-transform: uppercase; 
+      margin-bottom: 2px;
+      transition: color var(--transition-2);
+    }
+
+    .contact-info :is(.contact-link, time, address) { 
+      color: var(--white-2); 
+      font-size: var(--fs-7);
+      transition: color var(--transition-2);
+    }
+
+    .contact-info address { font-style: normal; }
+
+    .social-list { 
+      display: flex; 
+      justify-content: flex-start; 
+      align-items: center; 
+      gap: 15px; 
+      padding-bottom: 4px; 
+      padding-left: 7px; 
+    }
+
+    .social-item .social-link { 
+      color: var(--light-gray-70); 
+      font-size: 18px;
+      transition: color var(--transition-1);
+    }
+
+    .social-item .social-link:hover { color: var(--light-gray); }
+
+    /* ===== SOCIAL CHIPS ===== */
+    .social-chips-section { margin-top: 4px; }
+
+    .social-chips-label {
+      color: var(--light-gray-70);
+      font-size: var(--fs-8);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      padding-left: 2px;
+      transition: color var(--transition-2);
+    }
+
+    .social-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .s-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px 5px 8px;
+      border-radius: 50px;
+      font-family: var(--ff-poppins);
+      font-size: var(--fs-8);
+      font-weight: var(--fw-500);
+      color: var(--light-gray-70);
+      background: var(--border-gradient-onyx);
+      border: none;
+      box-shadow: var(--shadow-1);
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+      transition: all var(--transition-1);
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+
+    .s-chip:hover {
+      color: var(--white-2);
+      transform: translateY(-2px);
+    }
+
+    .s-chip:active { transform: translateY(0) scale(0.97); }
+
+    .s-chip .chip-icon {
+      width: 16px; 
+      height: 16px;
+      border-radius: 4px;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .s-chip .chip-icon svg { display: block; }
+
+    .s-chip.chip-github:hover { 
+      border-color: #e6edf3; 
+      box-shadow: 0 6px 20px rgba(230,237,243,0.1); 
+    }
+    .s-chip.chip-github:hover .chip-icon { color: #fff; }
+    .s-chip.chip-linkedin:hover { 
+      color: #0a66c2; 
+      box-shadow: 0 4px 16px hsla(214,89%,36%,.25); 
+    }
+    .s-chip.chip-twitter:hover { 
+      color: #00d4ff; 
+      box-shadow: 0 6px 20px rgba(0,212,255,0.2); 
+    }
+    .s-chip.chip-whatsapp:hover { 
+      color: #25d366; 
+      box-shadow: 0 6px 20px rgba(37,211,102,0.2); 
+    }
+    .s-chip.chip-email:hover { 
+      color: var(--orange-yellow-crayola); 
+      box-shadow: 0 4px 16px hsla(200,100%,50%,.2); 
+    }
+
+    /* ===== LIQUID GLASS NAVBAR ===== */
+    .navbar {
+      position: fixed; 
+      bottom: 0; 
+      left: 0; 
+      width: 100%;
+      background: rgba(17, 17, 26, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.37);
+      z-index: 5;
+      transition: all var(--transition-2);
+    }
+
+    [data-theme="light"] .navbar {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(209, 213, 219, 0.3);
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-list { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      align-items: center; 
+      padding: 0 10px; 
+    }
+
+    .navbar-link { 
+      color: var(--light-gray); 
+      font-size: var(--fs-8); 
+      padding: 20px 7px; 
+      transition: color var(--transition-1);
+      position: relative;
+    }
+
+    .navbar-link::before {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--text-gradient-yellow);
+      transition: width var(--transition-1);
+      border-radius: 2px;
+    }
+
+    .navbar-link:hover::before {
+      width: 70%;
+    }
+
+    .navbar-link:hover, .navbar-link:focus { 
+      color: var(--light-gray-70); 
+    }
+
+    .navbar-link.active { 
+      color: var(--orange-yellow-crayola); 
+    }
+
+    .navbar-link.active::before {
+      width: 70%;
+    }
+
+    /* ===== ABOUT ===== */
+    .about .article-title { margin-bottom: 15px; }
+
+    .about-text { 
+      color: var(--light-gray); 
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-300); 
+      line-height: 1.6;
+      transition: color var(--transition-2);
+    }
+
+    .about-text p:not(:last-child) { margin-bottom: 15px; }
+
+    .about-text a {
+      color: var(--orange-yellow-crayola);
+      transition: color var(--transition-1);
+    }
+
+    .about-text a:hover {
+      color: var(--vegas-gold);
+      text-decoration: underline;
+    }
+
+    .service { margin-bottom: 35px; }
+    .service-title { margin-bottom: 20px; }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .service-item {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-2);
+      z-index: 1;
+      transition: all var(--transition-1);
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-3);
+    }
+
+    .service-item::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit;
+      z-index: -1;
+      transition: background var(--transition-2);
+    }
+
+    .service-icon-box { 
+      margin-bottom: 0;
+      margin-top: 5px;
+    }
+
+    .service-icon-box img { margin: auto; }
+
+    .service-content-box { text-align: left; }
+
+    .service-item-title { margin-bottom: 7px; }
+
+    .service-item-text {
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+      font-weight: var(--fw-300);
+      line-height: 1.6;
+      transition: color var(--transition-2);
+    }
+
+    /* ===== RESUME ===== */
+    .article-title { margin-bottom: 30px; }
+    .timeline { margin-bottom: 35px; }
+
+    .timeline .title-wrapper { 
+      display: flex; 
+      align-items: center; 
+      gap: 15px; 
+      margin-bottom: 25px; 
+    }
+
+    .timeline-list { 
+      font-size: var(--fs-6); 
+      margin-left: 45px; 
+    }
+
+    .timeline-item { position: relative; }
+    .timeline-item:not(:last-child) { margin-bottom: 20px; }
+
+    .timeline-item-title { 
+      font-size: var(--fs-6); 
+      line-height: 1.3; 
+      margin-bottom: 7px;
+    }
+
+    .timeline-item-title a {
+      color: var(--greenie);
+      transition: color var(--transition-1);
+    }
+
+    .timeline-item-title a:hover {
+      color: var(--orange-yellow-crayola);
+    }
+
+    .timeline-list span { 
+      color: var(--vegas-gold); 
+      font-weight: var(--fw-400); 
+      line-height: 1.6;
+      transition: color var(--transition-2);
+    }
+
+    .timeline-item:not(:last-child)::before { 
+      content: ""; 
+      position: absolute; 
+      top: -25px; 
+      left: -30px; 
+      width: 1px; 
+      height: calc(100% + 50px); 
+      background: var(--jet); 
+      transition: background var(--transition-2); 
+    }
+
+    .timeline-item::after { 
+      content: ""; 
+      position: absolute; 
+      top: 5px; 
+      left: -33px; 
+      height: 6px; 
+      width: 6px; 
+      background: var(--text-gradient-yellow); 
+      border-radius: 50%; 
+      box-shadow: 0 0 0 4px var(--jet); 
+      transition: box-shadow var(--transition-2); 
+    }
+
+    .timeline-text { 
+      color: var(--light-gray); 
+      font-weight: var(--fw-300); 
+      line-height: 1.6;
+      transition: color var(--transition-2);
+    }
+
+    .skills-title { margin-bottom: 20px; }
+    .skills-list { padding: 20px; }
+    .skills-item:not(:last-child) { margin-bottom: 15px; }
+
+    .title-wrapper { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      gap: 10px; 
+      margin-bottom: 8px; 
+    }
+
+    .title-wrapper data { 
+      color: var(--light-gray); 
+      font-size: var(--fs-7); 
+      font-weight: var(--fw-300);
+      transition: color var(--transition-2);
+    }
+
+    .skill-progress-bg { 
+      background: var(--jet); 
+      border-radius: 10px; 
+      height: 8px;
+      transition: background var(--transition-2);
+    }
+
+    .skill-progress-fill { 
+      background: var(--text-gradient-yellow); 
+      border-radius: inherit; 
+      height: 100%;
+      transition: width var(--transition-1);
+    }
+
+    /* ===== PROJECTS ===== */
+    .filter-list { display: none; }
+    .filter-select-box { 
+      position: relative; 
+      margin-bottom: 25px; 
+    }
+
+    .filter-select {
+      background: var(--eerie-black-1);
+      color: var(--light-gray);
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      width: 100%; 
+      padding: 12px 16px;
+      border: 1px solid var(--jet);
+      border-radius: 14px;
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-300);
+      transition: var(--transition-1);
+    }
+
+    .filter-select.active .select-icon { transform: rotate(0.5turn); }
+
+    .select-list {
+      background: var(--eerie-black-1);
+      position: absolute; 
+      top: calc(100% + 6px); 
+      left: 0;
+      width: 100%; 
+      padding: 6px;
+      border: 1px solid var(--jet);
+      border-radius: 14px;
+      z-index: 2;
+      opacity: 0; 
+      visibility: hidden;
+      pointer-events: none;
+      transition: 0.15s ease-in-out;
+    }
+
+    .filter-select.active + .select-list { 
+      opacity: 1; 
+      visibility: visible; 
+      pointer-events: all; 
+    }
+
+    .select-item button { 
+      background: var(--eerie-black-1); 
+      color: var(--light-gray); 
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-300); 
+      width: 100%; 
+      padding: 8px 10px; 
+      border-radius: 8px;
+      transition: all var(--transition-1);
+    }
+
+    .select-item button:hover { 
+      --eerie-black-1: hsl(240, 2%, 20%); 
+      color: var(--orange-yellow-crayola); 
+    }
+
+    .project-list { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 20px; 
+      margin-bottom: 10px; 
+    }
+
+    .project-item { display: none; }
+    .project-item.active { 
+      display: block; 
+      animation: fadeIn 0.25s ease forwards; 
+    }
+
+    @keyframes fadeIn { 
+      from { opacity: 0; transform: scale(0.98); } 
+      to { opacity: 1; transform: scale(1); } 
+    }
+
+    .project-card {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      padding: 20px;
+      border-radius: 28px;
+      box-shadow: var(--shadow-2);
+      z-index: 1;
+      transition: all var(--transition-1);
+      border-left: 6px solid var(--greeniez);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute; 
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit; 
+      z-index: -1;
+      transition: background var(--transition-2);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--orange-yellow-crayola);
+      box-shadow: 0 8px 24px rgba(255, 77, 77, 0.15);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .project-date {
+      color: var(--white-2);
+      font-size: var(--fs-7);
+      font-weight: var(--fw-500);
+      transition: color var(--transition-2);
+    }
+
+    .project-tag {
+      color: var(--light-gray-70);
+      font-size: var(--fs-8);
+      background: var(--onyx);
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: all var(--transition-2);
+    }
+
+    .project-title {
+      color: var(--greenie);
+      font-size: var(--fs-4);
+      font-weight: var(--fw-500);
+      margin-bottom: 0.5rem;
+      transition: color var(--transition-1);
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 4px;
+    }
+
+    .project-title:hover {
+      color: #ff5f56;
+    }
+
+    .project-description {
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+      line-height: 1.6;
+      transition: color var(--transition-2);
+    }
+
+    .project-link {
+      color: var(--orange-yellow-crayola);
+      font-size: var(--fs-7);
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all var(--transition-1);
+    }
+
+    .project-link:hover {
+      gap: 8px;
+      color: var(--vegas-gold);
+    }
+
+    /* ===== API FEATURES LIST ===== */
+    .api-features-list {
+      list-style: none;
+      margin: 15px 0;
+      padding: 0;
+    }
+
+    .api-features-list li {
+      color: var(--light-gray);
+      font-size: var(--fs-7);
+      line-height: 1.8;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+      transition: color var(--transition-2);
+    }
+
+    .api-features-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--orange-yellow-crayola);
+      font-weight: bold;
+    }
+
+    .api-platform-section {
+      margin-bottom: 30px;
+    }
+
+    .api-item {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: var(--border-gradient-onyx);
+      border-radius: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .api-item::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit;
+      z-index: -1;
+      transition: background var(--transition-2);
+    }
+
+    .api-item h4 {
+      color: var(--greenie);
+      margin-bottom: 12px;
+      font-size: var(--fs-5);
+    }
+
+    /* ===== QUICK START CODE BLOCK ===== */
+    .quickstart { margin: 30px 0; }
+
+    .code-block {
+      background: var(--eerie-black-1);
+      border: 1px solid var(--jet);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all var(--transition-2);
+    }
+
+    .code-header {
+      padding: 1rem;
+      background: var(--onyx);
+      border-bottom: 1px solid var(--jet);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      transition: all var(--transition-2);
+    }
+
+    .code-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--light-gray-70);
+    }
+
+    .code-dot:nth-child(1) { background: #ff5f56; }
+    .code-dot:nth-child(2) { background: #ffbd2e; }
+    .code-dot:nth-child(3) { background: #27c93f; }
+
+    .mode-switch {
+      display: flex;
+      gap: 0.25rem;
+      background: var(--smoky-black);
+      padding: 0.25rem;
+      border-radius: 2rem;
+      margin-left: auto;
+      transition: background var(--transition-2);
+    }
+
+    .mode-btn {
+      background: none;
+      border: none;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2rem;
+      color: var(--light-gray-70);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-btn.active {
+      background: var(--onyx);
+      color: var(--white-2);
+    }
+
+    .code-content {
+      padding: 1.5rem;
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      font-size: 0.95rem;
+    }
+
+    .macos-app-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0;
+      text-align: center;
+    }
+
+    .macos-download-btn {
+      gap: 0.5rem;
+      background: var(--orange-yellow-crayola);
+      color: white;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 14px 28px; 
+      border: 2px solid transparent; 
+      border-radius: 50px;
+      display: flex; 
+      align-items: center; 
+      gap: 10px;
+      font-weight: 700; 
+      color: white;
+      background: linear-gradient(#121213, #121213), 
+                  linear-gradient(90deg, #FF6D1B, #FFEE55, #5BFF89, #4D8AFF, #6B5FFF, #FF64F9, #FF6565);
+      background-origin: border-box; 
+      background-clip: padding-box, border-box;
+      background-size: 200%; 
+      animation: gradientFlow 3s linear infinite;
+      cursor: pointer; 
+      transition: transform 0.2s;
+    }
+
+    .macos-download-btn:hover {
+      transform: translateY(-10px); 
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .macos-download-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .quickstart-note {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--light-gray-70);
+      text-align: center;
+      transition: color var(--transition-2);
+    }
+
+    /* ===== BLOG ===== */
+    .blog-posts { margin-bottom: 10px; }
+    .blog-posts-list { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 20px; 
+    }
+
+    .blog-post-item > a {
+      position: relative; 
+      background: var(--border-gradient-onyx);
+      border-radius: 16px; 
+      box-shadow: var(--shadow-4);
+      z-index: 1; 
+      display: flex; 
+      overflow: hidden;
+      transition: all var(--transition-1);
+    }
+
+    .blog-post-item > a:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-3);
+    }
+
+    .blog-post-item > a::before { 
+      content: ""; 
+      position: absolute; 
+      inset: 1px; 
+      border-radius: inherit; 
+      background: var(--eerie-black-1); 
+      z-index: -1; 
+      transition: background var(--transition-2); 
+    }
+
+    .blog-banner-box { 
+      width: 80px; 
+      min-height: 100%; 
+      overflow: hidden; 
+      border-radius: 12px; 
+    }
+
+    .blog-banner-box img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+    }
+
+    .blog-content { padding: 15px; }
+
+    .blog-meta { 
+      display: flex; 
+      justify-content: flex-start; 
+      align-items: center; 
+      gap: 7px; 
+      margin-bottom: 10px; 
+    }
+
+    .blog-category { 
+      color: var(--orange-yellow-crayola); 
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-300); 
+    }
+
+    .blog-meta .dot { 
+      background: var(--light-gray-70); 
+      width: 4px; 
+      height: 4px; 
+      border-radius: 50%; 
+      transition: background var(--transition-2); 
+    }
+
+    .blog-meta time { 
+      color: var(--light-gray-70); 
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-300); 
+      transition: color var(--transition-2); 
+    }
+
+    .blog-item-title { 
+      margin-bottom: 10px; 
+      line-height: 1.3; 
+    }
+
+    .blog-text { 
+      color: var(--light-gray); 
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-300); 
+      line-height: 1.6; 
+      transition: color var(--transition-2); 
+    }
+
+    .blog-post-item > a:hover .blog-item-title { 
+      color: var(--orange-yellow-crayola); 
+    }
+
+    /* ===== CONTACT ===== */
+    .mapbox {
+      position: relative; 
+      height: 250px;
+      width: 100%; 
+      border-radius: 16px;
+      border: 1px solid var(--jet);
+      margin-bottom: 30px; 
+      overflow: hidden;
+      transition: border-color var(--transition-2);
+    }
+
+    .mapbox figure { height: 100%; }
+
+    .mapbox iframe { 
+      width: 100%; 
+      height: 100%; 
+      border: none; 
+      filter: grayscale(1) invert(1);
+      transition: filter var(--transition-2);
+    }
+
+    [data-theme="light"] .mapbox iframe {
+      filter: grayscale(1) invert(0);
+    }
+
+    .contact-form { margin-bottom: 10px; }
+    .form-title { margin-bottom: 20px; }
+
+    .input-wrapper { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 25px; 
+      margin-bottom: 25px; 
+    }
+
+    .form-input {
+      color: var(--white-2); 
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-400);
+      padding: 13px 20px; 
+      border: 1px solid var(--jet);
+      border-radius: 14px; 
+      outline: none;
+      background: var(--eerie-black-1);
+      transition: all var(--transition-1);
+    }
+
+    .form-input::placeholder { font-weight: var(--fw-500); }
+    .form-input:focus { border-color: var(--orange-yellow-crayola); }
+
+    textarea.form-input { 
+      min-height: 100px; 
+      height: 120px; 
+      max-height: 200px; 
+      resize: vertical; 
+      margin-bottom: 25px; 
+    }
+
+    textarea.form-input::-webkit-resizer { display: none; }
+
+    .form-btn {
+      position: relative;
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      gap: 10px; 
+      width: 100%; 
+      padding: 13px 20px;
+      border-radius: 14px; 
+      font-size: var(--fs-6); 
+      font-weight: var(--fw-600);
+      color: var(--white-2);
+      box-shadow: var(--shadow-3);
+      transition: all var(--transition-1);
+    }
+
+    .form-btn:disabled { 
+      opacity: 0.7; 
+      cursor: not-allowed; 
+    }
+
+    .form-btn ion-icon { 
+      --ionicon-stroke-width: 50px; 
+      font-size: 16px; 
+    }
+
+    .sidebar-icon {
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+      height: 24px;
+      margin-right: 8px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 580px) {
+      :root { 
+        --fs-1: 32px; 
+        --fs-2: 24px; 
+        --fs-3: 26px; 
+        --fs-4: 18px; 
+        --fs-6: 15px; 
+        --fs-7: 15px; 
+        --fs-8: 12px; 
+      }
+
+      .sidebar, article { 
+        width: 520px; 
+        margin-inline: auto; 
+        padding: 30px; 
+      }
+
+      .article-title { padding-bottom: 15px; }
+      .info_more-btn { 
+        top: -30px; 
+        right: -30px; 
+        padding: 10px 15px; 
+      }
+
+      .info_more-btn span { 
+        display: block; 
+        font-size: var(--fs-8); 
+      }
+
+      .info_more-btn ion-icon { display: none; }
+      .separator { margin: 32px 0; }
+      .contacts-list { gap: 20px; }
+
+      .contact-info :is(.contact-link, time, address) { 
+        --fs-7: 14px; 
+      }
+
+      .mapbox { height: 380px; }
+
+      .input-wrapper { 
+        gap: 30px; 
+        grid-template-columns: 1fr 1fr; 
+      }
+
+      textarea.form-input { min-height: 150px; }
+    }
+
+    @media (min-width: 768px) {
+      .sidebar, article { width: 700px; }
+      .has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+      .contacts-list { grid-template-columns: 1fr 1fr; }
+      .navbar-link { --fs-8: 14px; }
+      .article-title { padding-bottom: 20px; }
+      .filter-select-box { display: none; }
+
+      .filter-list { 
+        display: flex; 
+        justify-content: flex-start; 
+        align-items: center; 
+        gap: 25px; 
+        padding-left: 5px; 
+        margin-bottom: 30px; 
+      }
+
+      .filter-item button { 
+        color: var(--light-gray); 
+        font-size: var(--fs-5); 
+        transition: var(--transition-1); 
+      }
+
+      .filter-item button:hover { 
+        color: var(--light-gray-70); 
+      }
+
+      .filter-item button.active { 
+        color: var(--orange-yellow-crayola); 
+      }
+
+      .project-list { grid-template-columns: 1fr; }
+      .blog-posts-list { grid-template-columns: 1fr 1fr; }
+      .form-btn { width: max-content; margin-left: auto; }
+    }
+
+    @media (min-width: 1024px) {
+      :root { 
+        --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125); 
+        --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125); 
+        --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125); 
+      }
+
+      .sidebar, article { 
+        width: 950px; 
+        box-shadow: var(--shadow-5); 
+      }
+
+      main { margin-bottom: 60px; }
+
+      .main-content { 
+        position: relative; 
+        width: max-content; 
+        margin: auto; 
+      }
+
+      .navbar { 
+        position: absolute; 
+        bottom: auto; 
+        top: 0; 
+        left: auto; 
+        right: 0; 
+        width: max-content; 
+        border-radius: 0 20px; 
+        padding: 0 20px; 
+        box-shadow: none; 
+      }
+
+      .navbar-list { 
+        gap: 30px; 
+        padding: 0 20px; 
+      }
+
+      .navbar-link { font-weight: var(--fw-500); }
+      .service-list { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px 25px; 
+      }
+
+      .blog-banner-box { height: 230px; }
+
+      .theme-controls {
+        top: 30px;
+        right: 30px;
+      }
+    }
+
+    @media (min-width: 1250px) {
+      body::-webkit-scrollbar { width: 20px; }
+      body::-webkit-scrollbar-track { background: var(--smoky-black); }
+
+      body::-webkit-scrollbar-thumb { 
+        border: 5px solid var(--smoky-black); 
+        background: hsla(0, 0%, 100%, 0.1); 
+        border-radius: 20px; 
+        box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11), 
+                    inset -1px -1px 0 hsla(0, 0%, 100%, 0.11); 
+      }
+
+      body::-webkit-scrollbar-thumb:hover { 
+        background: hsla(0, 0%, 100%, 0.15); 
+      }
+
+      body::-webkit-scrollbar-button { height: 60px; }
+
+      .sidebar, article { width: auto; }
+      article { min-height: 100%; }
+
+      main { 
+        max-width: 1200px; 
+        margin-inline: auto; 
+        display: flex; 
+        justify-content: center; 
+        align-items: stretch; 
+        gap: 25px; 
+      }
+
+      .main-content { 
+        min-width: 75%; 
+        width: 75%; 
+        margin: 0; 
+      }
+
+      .sidebar { 
+        position: sticky; 
+        top: 60px; 
+        max-height: max-content; 
+        height: 100%; 
+        margin-bottom: 0; 
+        padding-top: 60px; 
+        z-index: 1; 
+      }
+
+      .sidebar-info { flex-direction: column; }
+      .avatar-box img { width: 150px; }
+
+      .info-content .name { 
+        white-space: nowrap; 
+        text-align: center; 
+      }
+
+      .info-content .title { margin: auto; }
+      .info_more-btn { display: none; }
+
+      .sidebar-info_more { 
+        opacity: 1; 
+        visibility: visible; 
+      }
+
+      .contacts-list { grid-template-columns: 1fr; }
+
+      .contact-info :is(.contact-link) { 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+      }
+
+      .contact-info :is(.contact-link, time, address) { 
+        --fs-7: 14px; 
+        font-weight: var(--fw-300); 
+      }
+
+      .separator:last-of-type { 
+        margin: 15px 0; 
+        opacity: 0; 
+      }
+
+      .social-list { justify-content: center; }
+      .timeline-text { max-width: 700px; }
+      .social-chips-grid { gap: 6px; }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
-          <div id="progress">
-    <span id="progress-value">
-      <i class='bx bxs-chevrons-up'></i>
-    </span>
+  <!-- Theme and TTS Controls -->
+  <div class="theme-controls">
+    <button class="control-btn theme-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark theme">
+      <ion-icon name="sunny-outline" class="light-icon"></ion-icon>
+      <ion-icon name="moon-outline" class="dark-icon" style="display: none;"></ion-icon>
+    </button>
+    <button class="control-btn tts-btn" id="ttsToggle" aria-label="Read aloud" title="Read page aloud">
+      <ion-icon name="volume-high-outline" class="speak-icon"></ion-icon>
+      <ion-icon name="stop-outline" class="stop-icon" style="display: none;"></ion-icon>
+    </button>
   </div>
 
-        <aside class="sidebar" data-sidebar>
-            <div class="sidebar-info">
-                <figure class="avatar-box">
-                    <img src="https://i.postimg.cc/SKYJrTv4/Whats-App-Image-2025-11-27-at-9-01-36-PM.jpg" alt="avatar" width="80">
-                </figure>
-
-                <div class="info-content">
-                    <h1 class="name" title="Lincon Njogu Nyaga"><span1 class="first-name">Lincon</spa1> Njogu</h1>
-                    <p class="glowing-text">Founder and CEO <a href="https://eduniapps.com" target="_blank" rel="noopener noreferrer">EDUNIAPPS</a></p>
-                </div>
-
-                <button class="info-more-btn" data-sidebar-btn>
-                    <span>Show Contacts</span>
-                    <ion-icon name="chevron-down"></ion-icon>
-                </button>
-            </div>
-
-            <div class="sidebar-info-more">
-                <div class="separator"></div>
-
-                <ul class="contacts-list">
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="logo-linkedin"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Linkedin</p>
-                            <a href="https://www.linkedin.com/in/lincon-njogu-nyaga" class="contact-link">Connect</a>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="logo-whatsapp"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Whatsapp</p>
-                            <a href="https://wa.me/254711660741" class="contact-link">Start Chat</a>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="mail-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">E-Mail</p>
-                            <a href="mailto:linconnjogu75@gmail.com" class="contact-link">
-                                linconnjogu75@gmail.com
-                            </a>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="call-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Call</p>
-                            <a href="tel:+254792706501" class="contact-link">+254792706501</a>
-                        </div>
-                    </li>
-                </ul> <!-- Fixed: Missing closing tag for contacts-list -->
-
-                <div class="separator"></div>
-                
-                <div class="social-media">
-                    <div class="bg-icon">
-                        <a href="https://www.instagram.com/linconnjogunyaga" target="_blank" rel="noopener" aria-label="Instagram">
-                            <i class="bx bxl-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="bg-icon">
-                        <a href="https://www.tiktok.com/@giwme_swain" target="_blank" rel="noopener" aria-label="TikTok">
-                            <i class="bx bxl-tiktok"></i>
-                        </a>
-                    </div>
-                    <div class="bg-icon">
-                        <a href="https://x.com/GiwmeS" target="_blank" rel="noopener" aria-label="Twitter">
-                            <i class="bx bxl-twitter"></i>
-                        </a>
-                    </div>
-                    <div class="bg-icon">
-                        <a href="https://github.com/Linconnjogu" target="_blank" rel="noopener" aria-label="GitHub">
-                            <i class="bx bxl-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-        <div class="main-content">
-            <nav class="navbar">
-                <ul class="navbar-list">
-                    <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
-                </ul>
-            </nav>
-
-            <article class="about active" data-page="about">
-                <header>
-                    <h2 class="h2 article-title">About me</h2>
-                </header>
-
-               <section class="about-text">
-<p>I'm a Kenya-based native mobile engineer, Founder and CEO <a href="https://eduniapps.com" target="_blank" rel="noopener noreferrer">EDUNIAPPS</a> shipping high-performance Android apps with Kotlin and Jetpack Compose. I turn raw product ideas into clean, scalable, and intuitive mobile experiences.</p>
-
-    <p>I architect apps with modern Android patterns, elegant UI frameworks, and production-ready code. My workflow is all about efficiency, maintainability, and pixel-perfect design that elevates your brand and delivers a frictionless user journey.</p>
-</section>
-
-                <section class="service">
-                    <h3 class="h3 service-title">What I'm doing</h3>
-
-                    <ul class="service-list">
-                        
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/xjLdzYxZ/icon-app.png" alt="icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Mobile apps</h4>
-<p class="service-item-text">End-to-end native mobile app development for Android,iOS,PC using Kotlin and Jetpack Compose.</p>
-                            </div>
-                        </li>
-
-                         <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/ZqgqrqzG/icon-dev.png" alt="icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Web development</h4>
-                                <p class="service-item-text">High-quality development of sites at the professional level.</p>
-                            </div>
-                        </li>
-
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/4389jZkP/icon-design.png" alt="icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Web Design</h4>
-                                <p class="service-item-text">The most modern and high-quality design made at a professional level.</p>
-                            </div>
-                        </li>
-
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/0NL8zHpx/icon-photo.png" alt="icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Photography</h4>
-                                <p class="service-item-text">I make high-quality photos of any category at a professional level.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="clients">
-                    <h3 class="h3 clients-title">Clients</h3>
-
-                    <ul class="clients-list has-scrollbar">
-                        <li class="clients-item">
-                            <a href="#"><img src="https://i.postimg.cc/YqfKyG66/logo-1-color.png" alt="logo"></a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#"><img src="https://i.postimg.cc/fWm6JtgG/logo-2-color.png" alt="logo"></a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#"><img src="https://i.postimg.cc/Bb07xpwd/logo-3-color.png" alt="logo"></a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#"><img src="https://i.postimg.cc/hv1yMmkh/logo-4-color.png" alt="logo"></a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#"><img src="https://i.postimg.cc/ry1P86Dc/logo-5-color.png" alt="logo"></a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#"><img src="https://i.postimg.cc/SsWDN8NV/logo-6-color.png" alt="logo"></a>
-                        </li>
-                    </ul>
-                </section>
-
-            </article>
-            
-            <article class="resume" data-page="resume">
-                <header>
-                    <h2 class="h2 article-title">Resume</h2>
-                </header>
-
-                <section class="timeline">
-                    <div class="title-wrapper">
-                        <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
-                        <h3 class="h3">Education</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Dedan Kimathi University of Technology</h4>
-                            <span>2023 — Present</span>
-<p class="timeline-text">
-  Currently pursuing a degree in Business and Information Technology, gaining a solid mix of technical and business intelligence.<br> Focus areas include programming fundamentals, computer systems,databases,software engineering,and real-world problem-solving—plus essential collaboration and communication skills.
-</p>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Nyngwa Boys High School</h4>
-                            <span>2019 — 2022</span>
-                            <p class="timeline-text">Completed my secondary education with a focus on sciences and technology, developing foundational problem-solving skills and logical thinking that would later support my journey into computer science and programming.</p>
-                        </li>
-                    </ol>
-                </section>
-
-                <section class="timeline">
-                    <div class="title-wrapper">
-                        <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
-                        <h3 class="h3">Experience</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-                        <li class="timeline-item">
-                            <!-- Updated to reflect your actual experience -->
-                            <h4 class="h4 timeline-item-title">Freelance Web Developer</h4>
-                            <span>2022 — Present</span>
-                            <p class="timeline-text">Developing responsive websites and web applications for various clients. Working with HTML, CSS, JavaScript, and modern frameworks to create user-friendly interfaces and implement functionality according to client specifications.</p>
-                        </li>
-
-                        <li class="timeline-item">
-                            <!-- Updated to reflect your actual experience -->
-                            <h4 class="h4 timeline-item-title">Student Developer</h4>
-                            <span>2021 — 2022</span>
-                            <p class="timeline-text">Built personal projects and contributed to open-source initiatives to enhance programming skills. Focused on front-end development, responsive design principles, and user experience optimization.</p>
-                        </li>
-                    </ol>
-                </section>
-
-                <section class="skill">
-                    <h3 class="h3 skills-title">My Skills</h3>
-
-                    <ul class="skills-list content-card">
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">HTML/CSS</h5>
-                                <data value="85">85%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 85%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">JavaScript</h5>
-                                <data value="75">75%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 75%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">React</h5>
-                                <data value="70">70%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 70%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Python</h5>
-                                <data value="80">80%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-            </article>
-
-            <article class="portfolio" data-page="portfolio">
-                <header>
-                    <h2 class="h2 article-title">Portfolio</h2>
-                </header>
-
-                <section class="projects">
-                    <ul class="filter-list">
-                        <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
-                        <li class="filter-item"><button data-filter-btn>Web Design</button></li>
-                        <li class="filter-item"><button data-filter-btn>Applications</button></li>
-                        <li class="filter-item"><button data-filter-btn>Web Development</button></li>
-                    </ul>
-
-                    <div class="filter-select-box">
-                        <button class="filter-select" data-select>
-                            <div class="select-value" data-select-value>Select Category</div>
-                            <div class="select-icon">
-                                <ion-icon name="chevron-down"></ion-icon>
-                            </div>
-                        </button>
-
-                        <ul class="select-list">
-                            <li class="select-item"><button data-select-item>All</button></li>
-                            <li class="select-item"><button data-select-item>Web Design</button></li>
-                            <li class="select-item"><button data-select-item>Applications</button></li>
-                            <li class="select-item"><button data-select-item>Web Development</button></li>
-                        </ul>
-                    </div>
-
-                    <ul class="project-list">
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-                                    <img src="https://i.postimg.cc/qRHpHMyd/project-1.jpg" alt="finance" loading="lazy">
-                                </figure>
-                                <h3 class="project-title">Finance</h3>
-                                <p class="project-category">Web Development</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-                                    <img src="https://i.postimg.cc/bNrcM2Wt/project-2.png" alt="orizon" loading="lazy">
-                                </figure>
-                                <h3 class="project-title">Orizon</h3>
-                                <p class="project-category">Web Development</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web design">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-                                    <img src="https://i.postimg.cc/jSJVqYsq/project-3.jpg" alt="fundo" loading="lazy">
-                                </figure>
-                                <h3 class="project-title">Fundo</h3>
-                                <p class="project-category">Web Design</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="applications">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-                                    <img src="https://i.postimg.cc/dtpXxNGb/project-4.png" alt="brawlhalla" loading="lazy">
-                                </figure>
-                                <h3 class="project-title">Brawlhalla</h3>
-                                <p class="project-category">Applications</p>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            </article>
-
-            <article class="blog" data-page="blog">
-                <header>
-                    <h2 class="h2 article-title">Blog</h2>
-                </header>
-
-                <section class="blog-posts">
-                    <ul class="blog-posts-list">
-                        <li class="blog-post-item">
-                            <a href="#">
-                                <figure class="blog-banner-box">
-                                    <img src="https://i.postimg.cc/DysCZrWs/blog-1.jpg" alt="Design conferences in 2024" loading="lazy">
-                                </figure>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p class="blog-category">Design</p>
-                                        <span class="dot"></span>
-                                        <time datetime="2024-02-23">Feb 23, 2024</time>
-                                    </div>
-                                    <h3 class="h3 blog-item-title">Design conferences in 2024</h3>
-                                    <p class="blog-text">In 2024, several exciting design conferences are set to take place, offering opportunities for professionals and enthusiasts to connect, learn, and share innovative ideas.</p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="blog-post-item">
-                            <a href="#">
-                                <figure class="blog-banner-box">
-                                    <img src="https://i.postimg.cc/QC7qFDMs/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                                </figure>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p class="blog-category">Design</p>
-                                        <span class="dot"></span>
-                                        <time datetime="2024-01-29">Jan 29, 2024</time>
-                                    </div>
-                                    <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-                                    <p class="blog-text">When it comes to typography, choosing the right font is essential for effective design. In this article, I'll bring a brief overview of some of the best fonts that every designer should consider incorporating into their toolkit.</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            </article>
-
-            <article class="contact" data-page="contact">
-                <header>
-                    <h2 class="h2 article-title">Contact</h2>
-                </header>
-                
-                <section class="contact-form">
-                    <div class="contact-form-container">
-                        <div class="anonymous-option">
-                            <input type="checkbox" id="anonymous">
-                            <label for="anonymous">Send anonymously</label>
-                        </div>
-                        
-                        <!-- Normal Mode Form -->
-                        <form id="contactForm" class="normal-mode">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email Address <span class="optional">(Optional)</span></label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email address">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
-                            </div>
-                               <div class="form-group">
-                                <label>Attachment (Optional)</label>
-                                <div class="file-preview" id="filePreview">
-                                    <img id="previewImage" alt="File preview">
-                                    <div class="file-info">
-                                        <span class="icon">📄</span>
-                                        <span id="fileName"></span>
-                                    </div>
-                                </div>
-                                <div class="file-upload">
-                                    <label class="file-upload-label">
-                                        <span id="fileText">Choose a file to upload</span>
-                                        <span class="icon">📎</span>
-                                        <input type="file" id="fileInput" class="file-input" accept="image/*,.pdf,.doc,.docx">
-                                    </label>
-                                </div>
-                            
-                                <div class="file-actions">
-                                    <button type="button" class="upload-btn" id="uploadBtn">
-                                        <span class="icon">⬆️</span>
-                                        Upload File
-                                    </button>
-                                    <button type="button" class="remove-file" id="removeFile">
-                                        Remove File
-                                    </button>
-                                </div>
-                            </div>
-                            <button type="submit" class="contact-submit-btn" id="submitBtn">
-                                <ion-icon name="paper-plane"></ion-icon>
-                                <span>Send Message</span>
-                            </button>
-                            
-                            <div class="feedback" id="feedback"></div>
-                        </form>
-                        
-                        <!-- Anonymous Mode (Only shows iframe) -->
-                        <div class="anonymous-mode" id="anonymousMode" style="display: none;">
-                            <div class="anonymous-iframe-container">
-                                <iframe id="anonymousIframe" src="https://twet.link/dekutconnect"></iframe>
-                            </div>
-                            <div class="form-group" style="margin-top: 20px;">
-                                <button type="button" class="contact-submit-btn" id="backToNormal">
-                                    <span class="icon">←</span>
-                                    Back to Normal Form
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </article>
+  <main>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Lincon Njogu Nyaga" width="80" loading="lazy">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Lincon Njogu Nyaga">Lincon Njogu</h1>
+          <p class="title">Native App Developer <span class="cursor-blink">|</span></p>
         </div>
-    </main>
+        <button class="info_more-btn" data-sidebar-btn aria-label="Show Contacts">
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
 
-    <script src="main.js"></script>
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <div class="social-chips-section">
+          <p class="social-chips-label">Find me on</p>
+          <div class="social-chips-grid">
+            <a href="#" class="s-chip chip-whatsapp" aria-label="WhatsApp" title="WhatsApp">
+              <span class="chip-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17 0-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35m-5.42 7.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.16 12c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01C18.6 23.8 23.94 18.46 23.94 11.91A11.82 11.82 0 0 0 20.46 3.48z"/></svg>
+              </span>
+              WhatsApp
+            </a>
+
+            <a href="mailto:ceo@eduniapps.com" class="s-chip chip-email" aria-label="Email" title="Send Email">
+              <span class="chip-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              Email
+            </a>
+
+            <a href="#" class="s-chip chip-linkedin" aria-label="LinkedIn" title="LinkedIn">
+              <span class="chip-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              </span>
+              LinkedIn
+            </a>
+
+            <a href="#" class="s-chip chip-github" aria-label="GitHub" title="GitHub">
+              <span class="chip-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.82.57C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+              </span>
+              GitHub
+            </a>
+
+            <a href="#" class="s-chip chip-twitter" aria-label="Twitter" title="Twitter / X">
+              <span class="chip-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31L14.32 10.5l8.5 11.25h-6.34l-4.71-6.23-5.4 6.23H2.75l7.73-8.84L1.25 2.25H7.8l4.26 5.63 5.9-5.63h.28zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>
+              </span>
+              Twitter
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="main-content">
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="about">About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="resume">Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link="projects">Projects</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="blog">Blog</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link="contact">Contact</button></li>
+        </ul>
+      </nav>
+
+      <!-- ===== ABOUT ===== -->
+      <article class="about" data-page="about">
+         
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          
+            <p><strong><a>
+            Ask AI about me below with your favourite AI.
+          </a></strong></p>
+          
+            <a href="#" class="s-chip chip-linkedin" aria-label="Claude" title="Claude">
+              <span class="chip-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#D4A574" xmlns="http://www.w3.org/2000/svg"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>
+              </span>
+              Claude
+            </a>
+
+            <a href="#" class="s-chip chip-linkedin" aria-label="GPT" title="GPT">
+            <span class="integration-pill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A67E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>
+                    </svg>
+                </span>
+                GPT
+            </a>
+          <a href="https://www.perplexity.ai/search/visit-this-website-and-summarize-https://ceo.eduniapps.com/" class="s-chip chip-linkedin" aria-label="GPT" title="GPT">
+            <span class="integration-pill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A67E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>
+                    </svg>
+                </span>
+                Perplexity
+            </a>
+          <p>
+            I'm a passionate software engineer based in Nyeri, Kenya, building products that people actually use and love.
+          </p>
+          <p>
+            My core expertise lies in <strong>Android development with Jetpack Compose & Kotlin</strong>, full-stack web engineering, and scalable backend systems. I build things fast, ship them clean, and iterate on feedback.
+          </p>
+          <p>
+            I'm currently pursuing a <strong>Bachelor of Business Information Technology</strong> at <a href="https://www.dkut.ac.ke/" target="_blank" rel="noopener noreferrer">Dedan Kimathi University of Technology</a>, where I'm honing my skills in modern software development and business technology integration.
+          </p>
+          <p>
+            Beyond code, I add a personal touch to every product, ensuring it's not just functional and user-friendly, but also visually appealing and intuitive. My aim is to bring your message and identity to life in the most creative way possible.
+          </p>
+        </section>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127647.03405341788!2d36.9519095!3d-0.4196617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18285e425906e175%3A0x2e76ea4c5c0b5a39!2sNyeri%2C%20Kenya!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" width="400" height="300" loading="lazy" title="Nyeri, Kenya Location"></iframe>
+          </figure>
+        </section>
+
+        <section class="service">
+          <h3 class="h3 service-title">What I'm doing</h3>
+
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
+                <p class="service-item-text">
+                  The most modern and high-quality design made at a professional level.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+                <p class="service-item-text">
+                  Professional development of applications for iOS and Android.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+                <p class="service-item-text">
+                  I make high-quality photos of any category at a professional level.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ===== RESUME ===== -->
+      <article class="resume" data-page="resume">
+        <header><h2 class="h2 article-title">Resume</h2></header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                <a href="https://www.dkut.ac.ke/" target="_blank" rel="noopener noreferrer">Dedan Kimathi University of Technology</a>
+              </h4>
+              <span>2025 — Present</span>
+              <p class="timeline-text">Bachelor of Business Information Technology. Focusing on software engineering, business technology integration, and modern development practices.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Nyangwa Boys High School</h4>
+              <span>2019 — 2022</span>
+              <p class="timeline-text">Completed secondary education with a mean grade of B. Developed strong foundation in mathematics, science and sciences.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Primary Education</h4>
+              <span>2008 — 2018</span>
+              <p class="timeline-text">Completed primary education with excellent performance, laying the groundwork for future academic success.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Full-Stack Developer</h4>
+              <span>2024 — Present</span>
+              <p class="timeline-text">Building modern web applications with React, Node.js, and cloud infrastructure. Focus on scalable architecture and clean code.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Android Developer</h4>
+              <span>2023 — Present</span>
+              <p class="timeline-text">Developing native Android applications using Kotlin and Jetpack Compose. Emphasis on Material Design and performance optimization.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Freelance Developer</h4>
+              <span>2022 — Present</span>
+              <p class="timeline-text">Working with clients to deliver custom software solutions across web and mobile platforms.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">My skills</h3>
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper"><h5 class="h5">Android Development (Kotlin)</h5><data value="90">90%</data></div>
+              <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%;"></div></div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper"><h5 class="h5">Jetpack Compose</h5><data value="85">85%</data></div>
+              <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%;"></div></div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper"><h5 class="h5">Full-Stack Web Development</h5><data value="80">80%</data></div>
+              <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 80%;"></div></div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper"><h5 class="h5">UI/UX Design</h5><data value="75">75%</data></div>
+              <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 75%;"></div></div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ===== PROJECTS ===== -->
+      <article class="projects active" data-page="projects">
+        <header><h2 class="h2 article-title">Projects</h2></header>
+
+        <section class="projects-section">
+          <ul class="filter-list">
+            <li class="filter-item"><button class="active" data-filter-btn="all">All</button></li>
+            <li class="filter-item"><button data-filter-btn="android">Android</button></li>
+            <li class="filter-item"><button data-filter-btn="web">Web</button></li>
+            <li class="filter-item"><button data-filter-btn="open source">Open Source</button></li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>Select category</div>
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Android</button></li>
+              <li class="select-item"><button data-select-item>Web</button></li>
+              <li class="select-item"><button data-select-item>Open Source</button></li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+            <li class="project-item active" data-filter-item data-category="android">
+              <div class="project-card">
+                <h3 class="project-title">Stym</h3>
+                <div class="project-meta">
+                  <span class="project-date">March 2026</span>
+                  <span class="project-tag">Android</span>
+                </div>
+                <p class="project-description">
+                  A modern social media app for University students. Features include real-time messaging, match making with other University students and academic collaboration tools.
+                </p>
+                  <a href="https://play.google.com/store/apps/details?id=com.typistkedev.djournal" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <img alt="Google Play" class="sidebar-icon" src="./assets/images/google-play.svg">
+                    </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.typistkedev.djournal" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" class="sidebar-icon" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+                    </a>
+                <a href="https://play.google.com/store/apps/details?id=com.typistkedev.djournal" class="project-link" target="_blank" rel="noopener noreferrer">
+                  App Website →
+                </a>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web">
+              <div class="project-card">
+                <h3 class="project-title">AXTRA App</h3>
+                <div class="project-meta">
+                  <span class="project-date">March 2026</span>
+                  <span class="project-tag">Web / Android / Desktop</span>
+                </div>
+                
+                <div class="quickstart">
+                  <div class="code-block">
+                    <div class="code-header">
+                      <span class="code-dot"></span>
+                      <span class="code-dot"></span>
+                      <span class="code-dot"></span>
+                      <div class="mode-switch">
+                        <button class="mode-btn active" data-mode="desktop">Desktop</button>
+                        <button class="mode-btn" data-mode="android">Android</button>
+                        <button class="mode-btn" data-mode="web">Web</button>
+                      </div>
+                    </div>
+
+                    <div id="code-desktop" class="code-content" style="display: block;">
+                      <div class="macos-app-content">
+                        <a href="https://axtra.app.eduniappps.com" class="macos-download-btn" download>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                          </svg>
+                          Download for Desktop
+                        </a>
+                        <p style="font-size: 12px; color: var(--light-gray-70); margin-top: 8px;">macOS, Linux, Windows</p>
+                      </div>
+                    </div>
+
+                    <div id="code-android" class="code-content" style="display: none;">
+                      <a href="https://axtra.app.eduniappps.com" class="project-link" target="_blank" rel="noopener noreferrer">
+                        Download APK →
+                      </a>
+                    </div>
+
+                    <div id="code-web" class="code-content" style="display: none;">
+                      <a href="https://axtra.app.eduniappps.com" class="project-link" target="_blank" rel="noopener noreferrer">
+                        Visit Website →
+                      </a>
+                    </div>
+                  </div>
+
+                  <p class="quickstart-note">
+                    Stream and download movies, sports, drama, anime and more for free, no ads.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web">
+              <div class="project-card">
+                <h3 class="project-title">API Platform</h3>
+                <div class="project-meta">
+                  <span class="project-date">February 2026</span>
+                  <span class="project-tag">Web / API</span>
+                </div>
+                <p class="project-description">
+                  Comprehensive API platform providing access to various entertainment content and sports data.
+                </p>
+
+                <div class="api-platform-section">
+                  <div class="api-item">
+                    <h4>1. Movie API</h4>
+                    <ul class="api-features-list">
+                      <li>Full movie details including cast and crew information</li>
+                      <li>Vast movie database with no advertisements</li>
+                      <li>Ready for download and streaming</li>
+                      <li>High-quality metadata and posters</li>
+                      <li>RESTful API endpoints</li>
+                    </ul>
+                    <a href="https://axtra.api.movie.eduniappps.com" class="project-link" target="_blank" rel="noopener noreferrer">
+                      View Documentation →
+                    </a>
+                  </div>
+
+                  <div class="api-item">
+                    <h4>2. Drama Shorts API</h4>
+                    <ul class="api-features-list">
+                      <li>Complete drama shorts collection</li>
+                      <li>Browse by home, genres, and categories</li>
+                      <li>Comprehensive drama database</li>
+                      <li>Episode tracking and metadata</li>
+                      <li>Multiple language support</li>
+                    </ul>
+                    <a href="https://axtra.api.drama.eduniappps.com" class="project-link" target="_blank" rel="noopener noreferrer">
+                      View Documentation →
+                    </a>
+                  </div>
+
+                  <div class="api-item">
+                    <h4>3. Sports API</h4>
+                    <ul class="api-features-list">
+                      <li>Live streaming URLs for sports events</li>
+                      <li>Detailed sports statistics and analytics</li>
+                      <li>Real-time scores and updates</li>
+                      <li>Team and player information</li>
+                      <li>Historical match data</li>
+                    </ul>
+                    <a href="https://axtra.api.sports.eduniappps.com" class="project-link" target="_blank" rel="noopener noreferrer">
+                      View Documentation →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="android">
+              <div class="project-card">
+                <h3 class="project-title">FitTrack</h3>
+                <div class="project-meta">
+                  <span class="project-date">January 2025</span>
+                  <span class="project-tag">Android</span>
+                </div>
+                <p class="project-description">
+                  Fitness tracking application with workout planning, progress visualization, and social features. Built using Kotlin Coroutines and Room database.
+                </p>
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project →
+                </a>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="open source">
+              <div class="project-card">
+                <h3 class="project-title">KotlinUtils</h3>
+                <div class="project-meta">
+                  <span class="project-date">December 2024</span>
+                  <span class="project-tag">Open Source</span>
+                </div>
+                <p class="project-description">
+                  Collection of utility functions and extensions for Kotlin development. Published on Maven Central with comprehensive documentation and 500+ stars on GitHub.
+                </p>
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project →
+                </a>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web">
+              <div class="project-card">
+                <h3 class="project-title">Real-Time Chat Application</h3>
+                <div class="project-meta">
+                  <span class="project-date">November 2024</span>
+                  <span class="project-tag">Web</span>
+                </div>
+                <p class="project-description">
+                  WebSocket-based chat platform with end-to-end encryption, file sharing, and video calling capabilities. Built with React and Socket.io.
+                </p>
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project →
+                </a>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="android">
+              <div class="project-card">
+                <h3 class="project-title">NewsHub</h3>
+                <div class="project-meta">
+                  <span class="project-date">October 2024</span>
+                  <span class="project-tag">Android</span>
+                </div>
+                <p class="project-description">
+                  News aggregator app with personalized feed, offline reading, and text-to-speech. Implements MVVM architecture with clean separation of concerns.
+                </p>
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project →
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ===== BLOG ===== -->
+      <article class="blog" data-page="blog">
+        <header><h2 class="h2 article-title">Blog</h2></header>
+
+        <section class="blog-posts">
+          <ul class="blog-posts-list">
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Building Modern Android Apps" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Android</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-03-15">Mar 15, 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Building Modern Android Apps with Jetpack Compose</h3>
+                  <p class="blog-text">Exploring the latest features and best practices for building beautiful, performant Android applications.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Full-Stack Development" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Web Dev</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-03-01">Mar 01, 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Full-Stack Development in 2025</h3>
+                  <p class="blog-text">A comprehensive guide to modern full-stack development tools and frameworks.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Kotlin Coroutines" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Kotlin</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-02-20">Feb 20, 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">Mastering Kotlin Coroutines</h3>
+                  <p class="blog-text">Deep dive into asynchronous programming with Kotlin Coroutines and Flow.</p>
+                </div>
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI/UX Trends" loading="lazy">
+                </figure>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+                    <span class="dot"></span>
+                    <time datetime="2025-02-10">Feb 10, 2025</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">UI/UX Design Trends for 2025</h3>
+                  <p class="blog-text">Latest design patterns and user experience principles shaping modern applications.</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ===== CONTACT ===== -->
+      <article class="contact" data-page="contact">
+        <header><h2 class="h2 article-title">Contact</h2></header>
+
+        <section class="contact-form">
+          <form action="#" class="form" data-form>
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input aria-label="Full name">
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input aria-label="Email address">
+            </div>
+            <textarea name="message" class="form-input" placeholder="Write message..." required data-form-input aria-label="Your message"></textarea>
+            <button class="form-btn glow-on-hover" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+
+  <script>
+    'use strict';
+
+    /* ===== THEME TOGGLE ===== */
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const lightIcon = themeToggle.querySelector('.light-icon');
+    const darkIcon = themeToggle.querySelector('.dark-icon');
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      if (theme === 'light') {
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = 'block';
+      } else {
+        lightIcon.style.display = 'block';
+        darkIcon.style.display = 'none';
+      }
+    }
+
+    /* ===== TEXT-TO-SPEECH ===== */
+    const ttsToggle = document.getElementById('ttsToggle');
+    const speakIcon = ttsToggle.querySelector('.speak-icon');
+    const stopIcon = ttsToggle.querySelector('.stop-icon');
+    let speech = null;
+    let isSpeaking = false;
+
+    if ('speechSynthesis' in window) {
+      ttsToggle.addEventListener('click', toggleSpeech);
+    } else {
+      ttsToggle.style.opacity = '0.5';
+      ttsToggle.style.cursor = 'not-allowed';
+      ttsToggle.title = 'Text-to-speech not supported';
+    }
+
+    function toggleSpeech() {
+      if (isSpeaking) {
+        stopSpeech();
+      } else {
+        startSpeech();
+      }
+    }
+
+    function startSpeech() {
+      const activePage = document.querySelector('article.active');
+      if (!activePage) return;
+      const textContent = getPageText(activePage);
+      if (!textContent) return;
+
+      speech = new SpeechSynthesisUtterance(textContent);
+      speech.lang = 'en-US';
+      speech.rate = 0.9;
+      speech.pitch = 1;
+      speech.volume = 1;
+
+      speech.onstart = () => {
+        isSpeaking = true;
+        ttsToggle.classList.add('speaking');
+        speakIcon.style.display = 'none';
+        stopIcon.style.display = 'block';
+      };
+
+      speech.onend = () => {
+        stopSpeech();
+      };
+
+      speech.onerror = (event) => {
+        console.error('Speech synthesis error:', event);
+        stopSpeech();
+      };
+
+      window.speechSynthesis.speak(speech);
+    }
+
+    function stopSpeech() {
+      window.speechSynthesis.cancel();
+      isSpeaking = false;
+      ttsToggle.classList.remove('speaking');
+      speakIcon.style.display = 'block';
+      stopIcon.style.display = 'none';
+    }
+
+    function getPageText(element) {
+      const clone = element.cloneNode(true);
+      const unwanted = clone.querySelectorAll('script, style, .icon-box, .separator, button, form');
+      unwanted.forEach(el => el.remove());
+      let text = clone.textContent || '';
+      text = text.replace(/\s+/g, ' ').replace(/\n+/g, '. ').trim();
+      return text;
+    }
+
+    /* ===== HELPER FUNCTIONS ===== */
+    const elementToggleFunc = elem => elem.classList.toggle("active");
+
+    /* ===== SIDEBAR ===== */
+    const sidebar = document.querySelector("[data-sidebar]");
+    const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+    if (sidebarBtn) {
+      sidebarBtn.addEventListener("click", () => elementToggleFunc(sidebar));
+    }
+
+    /* ===== PAGE NAVIGATION (FIXED) ===== */
+    const navigationLinks = document.querySelectorAll("[data-nav-link]");
+    const pages = document.querySelectorAll("[data-page]");
+
+    navigationLinks.forEach((link) => {
+      link.addEventListener("click", function() {
+        const targetPage = this.getAttribute("data-nav-link");
+        
+        // Remove active class from all links and pages
+        navigationLinks.forEach(navLink => navLink.classList.remove("active"));
+        pages.forEach(page => page.classList.remove("active"));
+        
+        // Add active class to clicked link
+        this.classList.add("active");
+        
+        // Find and activate the corresponding page
+        const activePage = document.querySelector(`[data-page="${targetPage}"]`);
+        if (activePage) {
+          activePage.classList.add("active");
+        }
+        
+        // Stop speech and scroll to top
+        if (isSpeaking) stopSpeech();
+        window.scrollTo(0, 0);
+      });
+    });
+
+    /* ===== QUICK START MODE TOGGLE ===== */
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    const codeContents = {
+      android: document.getElementById('code-android'),
+      desktop: document.getElementById('code-desktop'),
+      web: document.getElementById('code-web')
+    };
+
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const mode = btn.dataset.mode;
+        Object.entries(codeContents).forEach(([key, el]) => {
+          if (el) {
+            el.style.display = key === mode ? 'block' : 'none';
+          }
+        });
+      });
+    });
+
+    /* ===== PROJECT FILTER ===== */
+    const select = document.querySelector("[data-select]");
+    const selectItems = document.querySelectorAll("[data-select-item]");
+    const selectValue = document.querySelector("[data-select-value]");
+    const filterBtn = document.querySelectorAll("[data-filter-btn]");
+    const filterItems = document.querySelectorAll("[data-filter-item]");
+
+    if (select) {
+      select.addEventListener("click", () => elementToggleFunc(select));
+    }
+
+    const filterFunc = selectedValue => {
+      filterItems.forEach(item => {
+        if (selectedValue === "all" || selectedValue === item.dataset.category) {
+          item.classList.add("active");
+        } else {
+          item.classList.remove("active");
+        }
+      });
+    };
+
+    if (selectItems) {
+      selectItems.forEach(item => {
+        item.addEventListener("click", function() {
+          const val = this.innerText.toLowerCase();
+          selectValue.innerText = this.innerText;
+          elementToggleFunc(select);
+          filterFunc(val);
+        });
+      });
+    }
+
+    let lastClickedBtn = filterBtn[0];
+    filterBtn.forEach(btn => {
+      btn.addEventListener("click", function() {
+        const val = this.getAttribute("data-filter-btn");
+        if (selectValue) selectValue.innerText = this.innerText;
+        filterFunc(val);
+        lastClickedBtn.classList.remove("active");
+        this.classList.add("active");
+        lastClickedBtn = this;
+      });
+    });
+
+    /* ===== CONTACT FORM ===== */
+    const form = document.querySelector("[data-form]");
+    const formInputs = document.querySelectorAll("[data-form-input]");
+    const formBtn = document.querySelector("[data-form-btn]");
+
+    if (form && formInputs && formBtn) {
+      formInputs.forEach(input => {
+        input.addEventListener("input", () => {
+          formBtn.toggleAttribute("disabled", !form.checkValidity());
+        });
+      });
+    }
+  </script>
 </body>
 </html>
