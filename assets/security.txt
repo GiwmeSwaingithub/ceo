@@ -1,0 +1,11 @@
+# Security Policy — https://ceo.eduniapps.com
+# Place this file at /.well-known/security.txt
+
+Contact: mailto:ceo@eduniapps.com
+Expires: 2027-03-27T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://ceo.eduniapps.com/.well-known/security.txt
+Policy: https://ceo.eduniapps.com/security-policy.html
+
+# If you find a vulnerability, please report it responsibly.
+# We aim to respond within 72 hours and appreciate coordinated disclosure.
