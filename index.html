@@ -257,6 +257,13 @@
       
       --transition-1: 0.25s ease;
       --transition-2: 0.5s ease-in-out;
+                  --coral-bright: #dc2626;
+            --bg-surface: #111316;
+            --coral-dim: #b91c1c;
+            --border-color: #2a2f38;
+      --shadow-glow: 0 0 20px hsla(200, 100%, 50%, 0.3);
+  --gradient-1: linear-gradient(to right bottom, hsl(299, 100%, 52%), hsl(291, 100%, 58%), hsl(283, 100%, 60%), hsl(273, 100%, 62%), hsl(262, 100%, 63%), hsl(242, 100%, 69%), hsl(223, 100%, 62%), hsl(210, 100%, 50%), hsl(203, 100%, 50%), hsl(198, 100%, 50%), hsl(192, 100%, 48%), hsl(185, 90%, 48%));
+
     }
 
     /* Light Theme */
@@ -286,6 +293,9 @@
       --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.08);
       --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.06);
       --shadow-5: 0 24px 80px hsla(0, 89%, 44%, 0.08);
+                  --bg-surface: #e6eef5;
+            --border-color: #cad8eb;
+
     }
 
     /* ===== THEME TOGGLE & TTS CONTROLS ===== */
@@ -308,7 +318,7 @@
       border: 1px solid var(--jet);
       border-radius: 12px;
       width: 48px;
-      height: 20px;
+      height: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -477,7 +487,10 @@
       z-index: -1;
       transition: background var(--transition-2);
     }
-
+.icon-box:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: var(--shadow-glow);
+    }
     .icon-box ion-icon { --ionicon-stroke-width: 35px; }
 
     article { display: none; }
@@ -904,6 +917,48 @@
     /* ===== ABOUT ===== */
     .about .article-title { margin-bottom: 15px; }
 
+.about .gallery-section .column {
+	display: flex;
+	flex-direction: column;
+	padding: 0px 20px;
+}
+
+.about .gallery-section .column .header {
+	width: 100%;
+	font-size: 1.5rem;
+	font-weight: 500;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.about .gallery-section .column .header .text {
+	min-width: 151px;
+	color: var(--main-color);
+	border: 2px solid var(--greenie);
+	border-radius: 10px;
+	padding: 0px 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(4px);
+}
+
+.about .gallery-section .column .header .header-line {
+	width: 100%;
+	height: 2px;
+	border-radius: 20px 0px 0px 20px;
+	background-color: var(--coral-dim);
+}
+
+.about .gallery-section .column .header .header-line.right {
+	border-radius: 0px 20px 20px 0px;
+}
+
+.about .gallery-section .column.australia {
+	margin-top: 10px;
+}
+
     .about-text { 
       color: var(--light-gray); 
       font-size: var(--fs-6); 
@@ -923,6 +978,211 @@
       color: var(--vegas-gold);
       text-decoration: underline;
     }
+
+/**
+ * #clients 
+ */
+
+.clients { margin-bottom: 15px; }
+
+.clients-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 0 -15px;
+  padding: 25px;
+  padding-bottom: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 25px;
+}
+
+.clients-item {
+  min-width: 50%;
+  scroll-snap-align: start;
+}
+
+.clients-item svg {
+  width: 100%;
+  filter: grayscale(1);
+  transition: var(--transition-1);
+}
+
+.clients-item svg:hover { filter: grayscale(0); }
+  .clients-item { min-width: calc(13.33% - 10px); }
+
+  .clients-list {
+    gap: 50px;
+    margin: 0 -30px;
+    padding: 25px;
+    scroll-padding-inline: 45px;
+  }
+
+  .clients-item { min-width: calc(31.33% - 35px); }
+
+.career-main {
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.career-main .career-section {
+	max-width: 1000px;
+	padding: 0px 20px;
+}
+
+.career-main .career-section .career-header {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.career-main .career-section .career-header .text {
+	font-size: 1.4rem;
+	font-weight: 600;
+	padding: 5px 1px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 2px solid var(--coral-dim);
+	border-bottom: 0px;
+	border-radius: 10px 10px 0px 0px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: rgba(7, 23, 238, 0.1);
+	backdrop-filter: blur(4px);
+  color: var(--light-gray);
+
+}
+
+.career-main .career-section .career-goals {
+	margin-top: 10px;
+}
+
+.career-main .career-section .career-goals .goals {
+	margin-top: 25px;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 40px;
+	column-gap: 20px;
+}
+
+.career-main .career-section .career-goals .goals-row {
+	width: 100%;
+	max-width: 380px;
+	min-width: 250px;
+	box-sizing: content-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.career-main .career-section .career-goals .goals-row .goals-header {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.career-main .career-section .career-goals .goals-row .header-line {
+	width: 100%;
+	height: 4px;
+	border-radius: 20px;
+	background-color: var(--coral-dim);
+}
+
+.career-main .career-section .career-goals .goals-row .goals-header .text {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-left: 10px;
+	margin-right: 10px;
+  color: var(--light-gray);
+
+}
+
+.career-main .career-section .career-goals .goals-row .texts {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+              color: var(--light-gray);
+
+}
+
+.career-main .career-section .career-goals .goals-row .text-row {
+	min-height: 62.8px;
+	font-size: 1.05rem;
+	font-weight: 500;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 2px solid #10e91b;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(6, 125, 223, 0.1);
+	background: rgba(137, 6, 155, 0.1);
+	backdrop-filter: blur(4px);
+	display: flex;
+	align-items: center;
+}
+
+.career-main .career-section .career-goals .goals-row .text-row .tr-icon {
+	margin-right: 10px;
+	min-width: 16.8px;
+	min-height: 16.8px;
+	border-radius: 50%;
+	background-color: var(--greeniez);
+}
+.upcoming-item:not(:last-child) { margin-block-end: 90px; }
+
+.upcoming-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upcoming-card::before {
+  top: 50%;
+  background-image: var(--gradient-1);
+  transform: translateY(-50%);
+  width: 90%;
+  height: 80px;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 5px;
+}
+
+.upcoming-card.left::before {
+  right: 0;
+  clip-path: polygon(90% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+}
+
+.upcoming-card .card-title { text-transform: uppercase; }
+
+.upcoming-card.left .card-title {
+  margin-inline-end: 50px;
+  text-align: right;
+}
+
+  .upcoming-card::before { height: 60px; }
+  
+  .upcoming-card .card-title { --fontSize-3: 2.8rem; }
+
+.has-before,
+.has-after {
+  position: relative;
+  z-index: 1;
+}
+
+.has-before::before,
+.has-after::after {
+  content: "";
+  position: absolute;
+}
 
     .service { margin-bottom: 35px; }
     .service-title { margin-bottom: 20px; }
@@ -980,6 +1240,100 @@
       line-height: 1.6;
       transition: color var(--transition-2);
     }
+.lincon-accent {
+            color: var(--coral-bright);
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+        /* Newsletter */
+        .newsletter {
+            margin: 4rem 0;
+            background: linear-gradient(135deg, var(--bg-surface), transparent);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .newsletter-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+                        color: var(--light-gray);
+
+        }
+
+        .newsletter-desc {
+            font-size: 1rem;
+            color: var(--light-gray);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--coral-bright);
+        }
+
+        .newsletter-btn {
+            background: var(--coral-bright);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .newsletter-btn:hover {
+            background: var(--coral-dim);
+            transform: translateY(-1px);
+        }
+
+        .newsletter-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+
+        .beta-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .beta-label {
+            background: var(--coral-bright);
+            color: white;
+            padding: 0.125rem 0.375rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
 
     /* ===== RESUME ===== */
     .article-title { margin-bottom: 30px; }
@@ -997,22 +1351,62 @@
       margin-left: 45px; 
     }
 
-    .timeline-item { position: relative; }
+    .timeline-item { 
+      position: relative;
+      animation: fadeIn 0.5s ease backwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeIn {
+      from { 
+        opacity: 0; 
+        transform: translateX(-20px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateX(0); 
+      }
+    }
+
     .timeline-item:not(:last-child) { margin-bottom: 20px; }
 
     .timeline-item-title { 
       font-size: var(--fs-6); 
       line-height: 1.3; 
       margin-bottom: 7px;
+      transition: color var(--transition-1);
+    }
+
+    .timeline-item:hover .timeline-item-title {
+      color: var(--greeniez);
     }
 
     .timeline-item-title a {
       color: var(--greenie);
       transition: color var(--transition-1);
+      position: relative;
+    }
+
+    .timeline-item-title a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--greenie);
+      transition: width var(--transition-1);
     }
 
     .timeline-item-title a:hover {
-      color: var(--orange-yellow-crayola);
+      color: var(--greeniez);
+    }
+
+    .timeline-item-title a:hover::after {
+      width: 100%;
     }
 
     .timeline-list span { 
@@ -1040,10 +1434,15 @@
       left: -33px; 
       height: 6px; 
       width: 6px; 
-      background: var(--text-gradient-yellow); 
+      background: var(--greeniez); 
       border-radius: 50%; 
       box-shadow: 0 0 0 4px var(--jet); 
-      transition: box-shadow var(--transition-2); 
+      transition: all var(--transition-2); 
+    }
+
+    .timeline-item:hover::after {
+      transform: scale(1.5);
+      box-shadow: 0 0 0 6px var(--jet), var(--shadow-glow);
     }
 
     .timeline-text { 
@@ -1077,13 +1476,49 @@
       border-radius: 10px; 
       height: 8px;
       transition: background var(--transition-2);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-progress-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, hsla(200, 100%, 50%, 0.3), transparent);
+      animation: shimmer-skill 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-skill {
+      0% { left: -100%; }
+      100% { left: 100%; }
     }
 
     .skill-progress-fill { 
       background: var(--text-gradient-yellow); 
       border-radius: inherit; 
       height: 100%;
-      transition: width var(--transition-1);
+      transition: width 1s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, hsla(255, 255, 255, 0.3), transparent);
+      animation: shimmer-fill 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-fill {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
     /* ===== PROJECTS ===== */
@@ -1192,6 +1627,61 @@
       border-color: var(--orange-yellow-crayola);
       box-shadow: 0 8px 24px rgba(255, 77, 77, 0.15);
     }
+.project-card a1 {
+	position: relative;
+	display: flex;
+  	width: 40%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 5px;
+	background-color:  #c2085f;
+	padding: 7px 9px;
+	cursor: pointer;
+	border-radius: 14px;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.project-card a1::after {
+	position: absolute;
+	right: calc(100% + 1px);
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(11, 218, 131);
+	border-radius: 4px;
+	transition: all 0.3s ease;
+	z-index: -1;
+	content: "";
+}
+
+.project-card a1:hover::after {
+	right: 0;
+	transition: all 0.3s ease;
+}
+
+.project-card a1 em {
+	color: white;
+	font-weight: 500;
+	margin-right: 10px;
+}
+
+.project-card a1 i {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	position: relative;
+	top: 1px;
+	transition: all 0.3s ease;
+}
+
+.project-card a1:hover i {
+	margin-left: 10px;
+	transition: all 0.3s ease;
+}
 
     .project-meta {
       display: flex;
@@ -1429,102 +1919,92 @@
       transition: color var(--transition-2);
     }
 
-    /* ===== BLOG ===== */
-    .blog-posts { margin-bottom: 10px; }
-    .blog-posts-list { 
-      display: grid; 
-      grid-template-columns: 1fr; 
-      gap: 20px; 
-    }
+/*-----------------------------------*\
+  #BLOG
+\*-----------------------------------*/
 
-    .blog-post-item > a {
-      position: relative; 
-      background: var(--border-gradient-onyx);
-      border-radius: 16px; 
-      box-shadow: var(--shadow-4);
-      z-index: 1; 
-      display: flex; 
-      overflow: hidden;
-      transition: all var(--transition-1);
-    }
+.blog-posts { margin-bottom: 10px; }
 
-    .blog-post-item > a:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-3);
-    }
+.blog-posts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
 
-    .blog-post-item > a::before { 
-      content: ""; 
-      position: absolute; 
-      inset: 1px; 
-      border-radius: inherit; 
-      background: var(--eerie-black-1); 
-      z-index: -1; 
-      transition: background var(--transition-2); 
-    }
+.blog-post-item > a {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  height: 100%;
+  box-shadow: var(--shadow-4);
+  border-radius: 16px;
+  z-index: 1;
+}
 
-    .blog-banner-box { 
-      width: 80px; 
-      min-height: 100%; 
-      overflow: hidden; 
-      border-radius: 12px; 
-    }
+.blog-post-item > a::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--eerie-black-1);
+  z-index: -1;
+}
 
-    .blog-banner-box img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-    }
+.blog-banner-box {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
-    .blog-content { padding: 15px; }
+.blog-banner-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-1);
+}
 
-    .blog-meta { 
-      display: flex; 
-      justify-content: flex-start; 
-      align-items: center; 
-      gap: 7px; 
-      margin-bottom: 10px; 
-    }
+.blog-post-item > a:hover .blog-banner-box img { transform: scale(1.1); }
 
-    .blog-category { 
-      color: var(--orange-yellow-crayola); 
-      font-size: var(--fs-6); 
-      font-weight: var(--fw-300); 
-    }
+.blog-content { padding: 15px; }
 
-    .blog-meta .dot { 
-      background: var(--light-gray-70); 
-      width: 4px; 
-      height: 4px; 
-      border-radius: 50%; 
-      transition: background var(--transition-2); 
-    }
+.blog-meta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+}
 
-    .blog-meta time { 
-      color: var(--light-gray-70); 
-      font-size: var(--fs-6); 
-      font-weight: var(--fw-300); 
-      transition: color var(--transition-2); 
-    }
+.blog-meta :is(.blog-category, time) {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+}
 
-    .blog-item-title { 
-      margin-bottom: 10px; 
-      line-height: 1.3; 
-    }
+.blog-meta .dot {
+  background: var(--light-gray-70);
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+}
 
-    .blog-text { 
-      color: var(--light-gray); 
-      font-size: var(--fs-6); 
-      font-weight: var(--fw-300); 
-      line-height: 1.6; 
-      transition: color var(--transition-2); 
-    }
+.blog-item-title {
+  margin-bottom: 10px;
+  line-height: 1.3;
+  transition: var(--transition-1);
+}
 
-    .blog-post-item > a:hover .blog-item-title { 
-      color: var(--orange-yellow-crayola); 
-    }
+.blog-post-item > a:hover .blog-item-title { color: var(--orange-yellow-crayola); }
+
+.blog-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
 
     /* ===== CONTACT ===== */
+  
     .mapbox {
       position: relative; 
       height: 250px;
@@ -1845,11 +2325,19 @@
   <!-- Theme and TTS Controls -->
   <div class="theme-controls">
     <button class="control-btn theme-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark theme">
-      <ion-icon name="sunny-outline" class="light-icon"></ion-icon>
+      <ion-icon name="sunny-outline" class="light-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      </ion-icon>
       <ion-icon name="moon-outline" class="dark-icon" style="display: none;"></ion-icon>
     </button>
     <button class="control-btn tts-btn" id="ttsToggle" aria-label="Read aloud" title="Read page aloud">
-      <ion-icon name="volume-high-outline" class="speak-icon"></ion-icon>
+      <ion-icon name="volume-high-outline" class="speak-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      </svg>
+      </ion-icon>
       <ion-icon name="stop-outline" class="stop-icon" style="display: none;"></ion-icon>
     </button>
   </div>
@@ -1904,8 +2392,9 @@
 
             <a href="https://github.com/LinconNjogu/" class="s-chip chip-github" aria-label="GitHub" title="GitHub">
               <span class="chip-icon">
-                <img src="./assets/images/github.svg" alt="Web development icon" width="50" height="24">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               </span>
+              Github
             </a>
 
             <a href="https://x.com/linconnjogunyaga" class="s-chip chip-twitter" aria-label="Twitter" title="Twitter / X">
@@ -1962,10 +2451,8 @@
             </a>
           <a onclick="openAI('perplexity')" class="s-chip chip-linkedin" aria-label="GPT" title="GPT">
             <span class="integration-pill">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.06 3L12 21.96L20.94 3H3.06ZM12 17.13L6.81 6H17.19L12 17.13Z"/>
-                </svg>
-                </span>
+                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"></path></svg>
+            </span>
                 Perplexity
             </a>
           <p>
@@ -2041,6 +2528,120 @@
             </li>
           </ul>
         </section>
+        
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Worked with</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+<svg fill="none" viewBox="0 0 213 84" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-[2rem] w-auto object-contain sm:h-[2.25rem] md:h-[2.5rem]" focusable="false"><g><path clip-rule="evenodd" d="M208.262 53.2898V52.7061H208.636C208.84 52.7061 209.118 52.7217 209.118 52.9713C209.118 53.2417 208.975 53.2898 208.733 53.2898H208.262ZM208.262 53.6993H208.511L209.092 54.7185H209.728L209.087 53.6577C209.418 53.633 209.691 53.4757 209.691 53.0285C209.691 52.4734 209.307 52.294 208.661 52.294H207.724V54.7185H208.262V53.6993ZM210.987 53.5095C210.987 52.086 209.882 51.2605 208.649 51.2605C207.409 51.2605 206.305 52.086 206.305 53.5095C206.305 54.933 207.409 55.7624 208.649 55.7624C209.88 55.7624 210.987 54.933 210.987 53.5095ZM210.311 53.5095C210.311 54.5469 209.549 55.2437 208.649 55.2437V55.2359C207.723 55.2437 206.975 54.5469 206.975 53.5095C206.975 52.4734 207.724 51.7792 208.649 51.7792C209.55 51.7792 210.311 52.4734 210.311 53.5095Z" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M125.169 29.4191L125.171 54.9771H132.382V29.4191H125.169ZM68.4419 29.3853V54.9771H75.719V35.1118L81.3946 35.13C83.261 35.13 84.5507 35.5785 85.4507 36.5392C86.5924 37.756 87.0573 39.7164 87.0573 43.3057V54.9771H94.1058V40.837C94.1058 30.7451 87.6794 29.384 81.392 29.384H68.4432L68.4419 29.3853ZM136.78 29.4204V54.9771H148.477C154.708 54.9771 156.742 53.9397 158.941 51.614C160.497 49.9812 161.501 46.3958 161.501 42.4789C161.501 38.887 160.65 35.6825 159.167 33.687C156.495 30.1185 152.647 29.4204 146.9 29.4204H136.78ZM143.934 34.9844H147.034C151.531 34.9844 154.441 37.0072 154.441 42.2527C154.441 47.5008 151.531 49.5223 147.034 49.5223H143.934V34.9844ZM114.772 29.4204L108.753 49.6744L102.987 29.4217L95.2033 29.4204L103.438 54.9771H113.832L122.132 29.4204H114.772ZM164.857 54.9771H172.069V29.4217L164.854 29.4204L164.857 54.9771ZM185.071 29.4295L175.002 54.968H182.112L183.706 50.4544H195.622L197.13 54.968H204.85L194.704 29.4282L185.071 29.4295ZM189.752 34.09L194.121 46.0552H185.246L189.752 34.09Z" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M21.9351 33.6806V30.1641C22.2754 30.1381 22.6209 30.1212 22.9715 30.1095C32.5825 29.8079 38.8881 38.3762 38.8881 38.3762C38.8881 38.3762 32.0773 47.8428 24.7755 47.8428C23.8105 47.8467 22.8507 47.6933 21.9351 47.3878V36.7226C25.6756 37.175 26.4289 38.8286 28.6784 42.583L33.6813 38.3606C33.6813 38.3606 30.0291 33.5662 23.8729 33.5662C23.204 33.5662 22.5637 33.613 21.9351 33.6806ZM21.9351 22.0612V27.3171C22.2793 27.2898 22.6248 27.2677 22.9715 27.2547C36.336 26.8049 45.0443 38.2267 45.0443 38.2267C45.0443 38.2267 35.0437 50.3999 24.6236 50.3999C23.669 50.3999 22.7741 50.3115 21.9351 50.162V53.4094C22.6533 53.5004 23.3975 53.555 24.1742 53.555C33.8696 53.555 40.8817 48.5994 47.6717 42.7325C48.7978 43.6347 53.4071 45.8304 54.354 46.7924C47.8977 52.2004 32.8527 56.5619 24.3223 56.5619C23.5248 56.5593 22.7287 56.5177 21.9351 56.4371V61.0001H58.788V22.0612H21.9351ZM21.9351 47.3878V50.162C12.967 48.563 10.4773 39.2303 10.4773 39.2303C10.4773 39.2303 14.784 34.4541 21.9351 33.6806V36.7226L21.9208 36.7213C18.1673 36.2702 15.236 39.7802 15.236 39.7802C15.236 39.7802 16.879 45.6874 21.9351 47.3878ZM6.00686 38.826C6.00686 38.826 11.3215 30.974 21.9351 30.1641V27.3145C10.1798 28.2596 0 38.2241 0 38.2241C0 38.2241 5.76529 54.907 21.9351 56.4345V53.4094C10.0694 51.9157 6.00686 38.826 6.00686 38.826Z" fill="currentColor" fill-rule="evenodd"></path></g></svg>              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+<svg fill="none" viewBox="0 0.85 130 83.3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-[2rem] w-auto object-contain sm:h-[2.25rem] md:h-[2.5rem]" focusable="false"><path clip-rule="evenodd" d="M129.942 45.0391C129.942 35.7988 125.466 28.5076 116.912 28.5076C108.321 28.5076 103.124 35.7988 103.124 44.9669C103.124 55.8316 109.26 61.318 118.067 61.318C122.362 61.318 125.611 60.3434 128.065 58.9718V51.7528C125.611 52.9801 122.795 53.738 119.222 53.738C115.721 53.738 112.617 52.5108 112.22 48.2516H129.87C129.87 47.7824 129.942 45.9054 129.942 45.0391ZM112.111 41.6101C112.111 37.5314 114.602 35.8349 116.876 35.8349C119.078 35.8349 121.424 37.5314 121.424 41.6101H112.111ZM89.1909 28.5076C85.6536 28.5076 83.3796 30.168 82.1163 31.323L81.647 29.0851H73.7061V71.172L82.7299 69.2589L82.766 59.044C84.0654 59.9825 85.9784 61.318 89.1548 61.318C95.6158 61.318 101.499 56.1203 101.499 44.6782C101.463 34.2106 95.5075 28.5076 89.1909 28.5076ZM87.0252 53.3771C84.8956 53.3771 83.6322 52.6191 82.766 51.6806L82.7299 38.2894C83.6684 37.2426 84.9678 36.5207 87.0252 36.5207C90.3098 36.5207 92.5838 40.2024 92.5838 44.9309C92.5838 49.7676 90.3459 53.3771 87.0252 53.3771ZM61.2894 26.378L70.3493 24.4289V17.1016L61.2894 19.0146V26.378ZM61.2894 29.1212H70.3493V60.7044H61.2894V29.1212ZM51.5798 31.7923L51.0023 29.1212H43.2058V60.7044H52.2295V39.3C54.3592 36.5207 57.9687 37.026 59.0876 37.4231V29.1212C57.9326 28.6881 53.7094 27.894 51.5798 31.7923ZM33.5323 21.2886L24.7251 23.1655L24.689 52.0777C24.689 57.4197 28.6956 61.3541 34.0376 61.3541C36.9974 61.3541 39.1631 60.8127 40.3543 60.163V52.8357C39.1992 53.3049 33.4962 54.9653 33.4962 49.6232V36.8095H40.3543V29.1212H33.4962L33.5323 21.2886ZM9.13205 38.2894C9.13205 36.8817 10.2871 36.3402 12.2001 36.3402C14.9434 36.3402 18.4085 37.1704 21.1517 38.6503V30.168C18.1558 28.9768 15.196 28.5076 12.2001 28.5076C4.87283 28.5076 0 32.3337 0 38.7225C0 48.6847 13.7161 47.0966 13.7161 51.3919C13.7161 53.0522 12.2723 53.5937 10.251 53.5937C7.25511 53.5937 3.42903 52.3664 0.397045 50.7061V59.2967C3.75389 60.7405 7.14682 61.3541 10.251 61.3541C17.7588 61.3541 22.9204 57.6363 22.9204 51.1753C22.8843 40.419 9.13205 42.332 9.13205 38.2894Z" fill="currentColor" fill-rule="evenodd"></path></svg>              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+<svg fill="none" viewBox="0 0.5 159 83" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-[2rem] w-auto object-contain sm:h-[2.25rem] md:h-[2.5rem]" focusable="false"><g><path d="M16.9519 23.8359C7.6284 23.8359 6.10352e-05 31.4643 6.10352e-05 40.7878C6.10352e-05 50.1113 7.6284 57.7397 16.9519 57.7397C26.2755 57.7397 33.9038 50.1584 33.9038 40.7878C33.9038 31.4171 26.3225 23.8359 16.9519 23.8359ZM16.9519 51.6652C11.1601 51.6652 6.49818 46.9093 6.49818 40.7878C6.49818 34.6663 11.1601 29.9103 16.9519 29.9103C22.7438 29.9103 27.4055 34.6663 27.4055 40.7878C27.4055 46.9093 22.7438 51.6652 16.9519 51.6652Z" fill="currentColor"></path><path d="M51.0441 33.2539C47.9834 33.2539 45.0169 34.4782 43.4628 36.5502V33.7248H37.3413V66.6868H43.4628V54.7734C45.0169 56.704 47.8892 57.74 51.0441 57.74C57.6365 57.74 62.8163 52.5602 62.8163 45.497C62.8163 38.4337 57.6365 33.2539 51.0441 33.2539ZM50.0082 52.419C46.5237 52.419 43.4158 49.6879 43.4158 45.497C43.4158 41.306 46.5237 38.5749 50.0082 38.5749C53.4928 38.5749 56.6005 41.306 56.6005 45.497C56.6005 49.6879 53.4928 52.419 50.0082 52.419Z" fill="currentColor"></path><path d="M77.226 33.2539C70.5395 33.2539 65.2656 38.4808 65.2656 45.497C65.2656 52.5131 69.8803 57.74 77.4144 57.74C83.5829 57.74 87.5384 54.0199 88.7627 49.829H82.7825C82.0291 51.5714 79.9101 52.7956 77.3673 52.7956C74.2124 52.7956 71.8109 50.5825 71.2458 47.4276H89.0452V45.0261C89.0452 38.622 84.5718 33.2539 77.226 33.2539ZM71.2928 43.0955C71.9522 40.1289 74.4007 38.1983 77.3673 38.1983C80.5223 38.1983 82.9237 40.2701 83.2063 43.0955H71.2928Z" fill="currentColor"></path><path d="M105.337 33.2539C102.606 33.2539 99.7336 34.4782 98.4152 36.5031V33.7248H92.2936V57.2691H98.4152V44.6023C98.4152 40.9293 100.393 38.5278 103.595 38.5278C106.561 38.5278 108.162 40.7881 108.162 43.9431V57.2691H114.284V42.9542C114.284 37.1151 110.705 33.2539 105.337 33.2539Z" fill="currentColor"></path><path d="M129.963 24.3076L116.636 57.2696H123.182L126.007 50.0651H141.17L143.995 57.2696H150.634L137.403 24.3076H129.963ZM128.126 44.6028L133.588 30.8059L139.003 44.6028H128.126Z" fill="currentColor"></path><path d="M159.345 24.3076H153.13V57.2696H159.345V24.3076Z" fill="currentColor"></path></g></svg>              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+<svg fill="none" viewBox="0 1.25 188 82.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-[2rem] w-auto object-contain sm:h-[2.25rem] md:h-[2.5rem]" focusable="false"><path d="M152.439 27.7328L152.784 48.4841H152.611L146.759 27.7328H137.121V53.8704H143.489L143.145 32.4133H143.318L149.6 53.8704H158.809V27.7328H152.439ZM31.178 27.7328L26.3587 54.1362H33.33L36.8585 30.1174H37.0305L40.4733 54.1354H47.3582L42.6245 27.7328H31.178ZM70.0779 27.7328L66.8941 47.8663H66.7215L63.5376 27.7328H53.0379L52.5213 54.1362H58.976L59.1487 30.3816H59.2343L63.5369 54.1354H70.0779L74.3813 30.3824H74.554L74.7251 54.1354H81.1798L80.5777 27.7328H70.0779ZM15.5151 46.6297C15.7727 47.2476 15.6871 48.1313 15.6007 48.5728C15.4287 49.4557 14.8266 50.3387 13.1048 50.3387C11.4701 50.3387 10.5232 49.3678 10.5232 47.9541V45.3939H3.63831V47.4249C3.63831 53.3412 8.19922 55.107 13.0192 55.107C17.6665 55.107 21.5388 53.4289 22.1418 49.1021C22.4857 46.8062 22.2274 45.3053 22.1418 44.7752C20.9366 39.2126 11.1262 37.6231 10.4369 34.532C10.3513 34.002 10.3513 33.4727 10.4369 33.119C10.6096 32.2362 11.2118 31.3532 12.7609 31.3532C14.31 31.3532 15.1712 32.3239 15.1712 33.7377V35.3271H21.6252V33.4727C21.6252 27.7328 16.5476 26.8499 12.9328 26.8499C8.37192 26.8499 4.58518 28.4393 3.89661 32.6776C3.7239 33.8256 3.63831 34.8857 3.98221 36.2101C5.01544 41.685 14.2251 43.2744 15.5151 46.6297ZM99.2538 46.6297C99.5113 47.2483 99.4251 48.0427 99.3394 48.5728C99.1667 49.4557 98.5645 50.3387 96.8435 50.3387C95.208 50.3387 94.2619 49.3678 94.2619 47.9541V45.3939H87.3762V47.4249C87.3762 53.2525 91.8515 55.0192 96.6715 55.0192C101.319 55.0192 105.106 53.4298 105.708 49.0143C106.052 46.7183 105.794 45.3053 105.708 44.6874C104.675 39.2126 94.9498 37.5345 94.2619 34.5328C94.1755 34.0027 94.1755 33.4727 94.2619 33.119C94.4339 32.2362 95.036 31.3532 96.5851 31.3532C98.0479 31.3532 98.9954 32.3239 98.9954 33.7377V35.3271H105.363V33.4727C105.363 27.7328 100.372 26.8499 96.7579 26.8499C92.1962 26.8499 88.4951 28.3507 87.8072 32.6776C87.6345 33.8256 87.6345 34.8857 87.8929 36.2101C88.9261 41.685 97.9622 43.1858 99.2538 46.6297ZM120.941 50.1622C122.748 50.1622 123.264 48.9257 123.436 48.2191C123.523 47.9549 123.523 47.5126 123.523 47.2483V27.7328H130.063V46.7183C130.063 47.2483 130.063 48.2191 129.977 48.4841C129.547 53.4298 125.76 55.0192 121.027 55.0192C116.294 55.0192 112.507 53.4298 112.076 48.4841C112.076 48.2191 111.99 47.2483 111.99 46.7183V27.7328H118.531V47.2483C118.531 47.6013 118.531 47.9541 118.617 48.2191C118.617 48.9257 119.134 50.1622 120.941 50.1622ZM174.643 49.8972C176.537 49.8972 177.139 48.6606 177.311 47.9541C177.397 47.6899 177.397 47.2476 177.397 46.9833V43.1858H174.73V39.3003H183.852V46.3655C183.852 46.8947 183.852 47.2476 183.766 48.1313C183.335 52.9875 179.291 54.6656 174.73 54.6656C170.168 54.6656 166.124 52.9875 165.694 48.1313C165.607 47.2476 165.607 46.8947 165.607 46.3646V35.2393C165.607 34.7971 165.694 33.9141 165.694 33.4727C166.296 28.5271 170.168 26.9377 174.73 26.9377C179.291 26.9377 183.25 28.5271 183.766 33.4727C183.852 34.267 183.852 35.2385 183.852 35.2385V36.1215H177.397V34.6207C177.397 34.6207 177.397 34.002 177.311 33.6491C177.225 33.0312 176.709 31.7068 174.73 31.7068C172.837 31.7068 172.32 32.9426 172.148 33.6491C172.062 34.002 172.062 34.4443 172.062 34.8857V46.9833C172.062 47.3362 172.062 47.6891 172.148 47.9541C172.148 48.6606 172.837 49.8972 174.643 49.8972Z" fill="currentColor"></path></svg>              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+<svg fill="none" class="w-[95.37px] lg:w-[95.75px]" viewBox="0 0 2193 545" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible"><g fill="currentColor"><path d="m466.383 137.073-206.469-119.2034c-6.63-3.8287-14.811-3.8287-21.441 0l-206.4586 119.2034c-5.5734 3.218-9.0144 9.169-9.0144 15.615v240.375c0 6.436 3.441 12.397 9.0144 15.615l206.4686 119.203c6.63 3.829 14.811 3.829 21.441 0l206.468-119.203c5.574-3.218 9.015-9.17 9.015-15.615v-240.375c0-6.436-3.441-12.397-9.015-15.615zm-12.969 25.25-199.316 345.223c-1.347 2.326-4.904 1.376-4.904-1.319v-226.048c0-4.517-2.414-8.695-6.33-10.963l-195.7577-113.019c-2.3263-1.347-1.3764-4.905 1.3182-4.905h398.6305c5.661 0 9.199 6.136 6.368 11.041h-.009z"></path><path d="m723.253 148.84h87.856v48.397h-84.881c-45.789 0-81.527 26.432-81.527 82.273s35.738 82.273 81.527 82.273h84.881v48.397h-91.578c-76.691 0-131.039-45.043-131.039-130.66 0-85.618 58.07-130.661 134.761-130.661z"></path><path d="m855.781 148.84h54.348v159.7c0 39.828 18.242 58.448 61.056 58.448 42.815 0 61.055-18.61 61.055-58.448v-159.7h54.35v170.866c0 58.071-36.85 94.933-115.405 94.933-78.551 0-115.404-37.231-115.404-95.301z"></path><path d="m1370.62 222.913c0 29.04-16.75 51.372-39.09 61.056v.746c23.45 3.354 35.37 20.103 35.73 42.814l1.12 82.641h-54.35l-1.11-73.705c-.37-16.381-10.06-26.432-29.41-26.432h-90.47v100.137h-54.34v-261.33h150.02c49.15 0 81.9 24.94 81.9 74.083zm-54.73 7.454c0-22.333-11.91-34.623-34.24-34.623h-88.61v69.236h89.34c20.47 0 33.51-12.281 33.51-34.623z"></path><path d="m1576.09 333.85c0-18.61-11.91-26.432-29.77-27.915l-60.31-5.583c-52.12-4.837-79.3-25.318-79.3-74.83 0-49.511 33.51-76.69 81.53-76.69h133.27v46.904h-129.55c-18.61 0-30.52 9.683-30.52 28.294 0 18.61 12.28 27.547 30.9 29.04l61.42 5.214c46.54 4.091 77.06 25.318 77.06 75.198s-32.38 76.69-78.17 76.69h-139.23v-46.904h134.01c17.5 0 28.66-11.912 28.66-29.408z"></path><path d="m1789.79 144.373c81.89 0 133.65 52.487 133.65 134.761 0 82.273-53.98 135.506-135.88 135.506s-133.65-53.233-133.65-135.506c0-82.274 53.98-134.761 135.88-134.761zm77.43 135.129c0-55.095-32.02-87.479-78.56-87.479-46.53 0-78.55 32.384-78.55 87.479 0 55.094 32.02 87.478 78.55 87.478 46.54 0 78.56-32.384 78.56-87.478z"></path><path d="m2192.95 222.913c0 29.04-16.75 51.372-39.1 61.056v.746c23.46 3.354 35.37 20.103 35.74 42.814l1.12 82.641h-54.35l-1.12-73.705c-.36-16.381-10.05-26.432-29.4-26.432h-90.47v100.137h-54.35v-261.33h150.03c49.14 0 81.9 24.94 81.9 74.083zm-54.73 7.454c0-22.333-11.91-34.623-34.25-34.623h-88.6v69.236h89.34c20.47 0 33.51-12.281 33.51-34.623z"></path></g></svg>              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <main class="career-main">
+            <div class="career-section">
+                
+                <div class="career-goals">
+                    <div class="cg-header career-header">
+                        <div class="text">Career goals</div>
+                        <div class="header-line"></div>
+                    </div>
+                    <div class="goals">
+                        <div class="goals-row short-term-goals">
+                            <div class="goals-header">
+                                <div class="text">Short-Term Goals</div>
+                                <div class="header-line"></div>
+                            </div>
+                            <div class="texts">
+                                <div class="text-row">
+                                    <div class="tr-icon"></div>Develop technical skills in web development.
+                                </div>
+                                <div class="text-row">
+                                    <div class="tr-icon"></div>Gain practical experience through collaboration.
+                                </div>
+                                <div class="text-row">
+                                    <div class="tr-icon"></div>Build a strong portfolio.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goals-row long-term-goals">
+                            <div class="goals-header">
+                                <div class="text">Long-Term Goals</div>
+                                <div class="header-line"></div>
+                            </div>
+                            <div class="texts">
+                                <div class="text-row">
+                                    <div class="tr-icon"></div>Establish a web development agency.
+                                </div>
+                                <div class="text-row">
+                                    <div class="tr-icon"></div>Lead a team of creative professionals.
+                                </div>
+                                <div class="text-row">
+                                    <div class="tr-icon"></div>Contribute to business growth through online solutions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="gallery-section">
+            <div class="column nepal">
+                <div class="header">
+                    <div class="header-line"></div>
+                    <div class="text">HOBBIES<i class="fa-solid fa-camera"></i></div>
+                    <div class="header-line right"></div>
+                </div>
+               
+            </div>
+          
+        </div>
+                    <ol class="upcoming-list">
+
+                    <li class="upcoming-item">
+
+        <div class="upcoming-card left has-before" data-reveal="left">
+
+                <img src="./assets/images/team-logo-1.png" width="86" height="81" loading="lazy"
+                  alt="Lincon Njogu Favourite Game" class="card-banner">
+<p>Favourite Game</p>
+                <h3 class="h3 card-title"><a href="https://apps.eduniapps.com" target="_blank" rel="noopener noreferrer">Ziuo Game</a></h3>
+
+              </div>
+                    </li>
+                  </ol>
       </article>
 
       <!-- ===== RESUME ===== -->
@@ -2148,7 +2749,14 @@
           <ul class="project-list">
             <li class="project-item active" data-filter-item data-category="android">
               <div class="project-card">
+                                <div class="project-meta">
+
                 <h3 class="project-title">Stym</h3>
+                <button class="beta-btn active" id="beta-btn" data-beta="true">
+                            <span class="beta-label">β</span>
+                            <span class="beta-text">Beta</span>
+                        </button>
+                                </div>
                 <div class="project-meta">
                   <span class="project-date">March 2026</span>
                   <span class="project-tag">Android</span>
@@ -2162,9 +2770,11 @@
                   <a href="https://play.google.com/store/apps/details?id=com.typistkedev.djournal" class="project-link" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" class="sidebar-icon" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
                     </a>
-                <a href="https://play.google.com/store/apps/details?id=com.typistkedev.djournal" class="project-link" target="_blank" rel="noopener noreferrer">
-                  App Website →
-                </a>
+                <a1 href="https://play.google.com/store/apps/details?id=com.typistkedev.djournal" class="project-link" target="_blank" rel="noopener noreferrer">
+                   
+                  <em>App Website</em>
+							<i>&#10095;&#10095;</i>
+                </a1>
               </div>
             </li>
 
@@ -2296,9 +2906,11 @@
                   <li>boost reviews of your app</li>
                 </ul>
                 </p>
-                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                  Visit site →
-                </a>
+                <a1 href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  
+                  <em>Visit site</em>
+							<i>&#10095;&#10095;</i>
+                </a1>
               </div>
             </li>
 
@@ -2312,9 +2924,13 @@
                 <p class="project-description">
                   Collection of utility functions and extensions for Kotlin development. Published on Maven Central with comprehensive documentation and 500+ stars on GitHub.
                 </p>
-                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                  View Project →
-                </a>
+                                <img src="./assets/images/repository of the day.svg" alt="client logo">
+
+                <a1 href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                
+                  <em>View Project</em>
+							<i>&#10095;&#10095;</i>
+                </a1>
               </div>
             </li>
 
@@ -2328,9 +2944,9 @@
                 <p class="project-description">
                   WebSocket-based chat platform with end-to-end encryption, file sharing, and video calling capabilities. Built with React and Socket.io.
                 </p>
-                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                  View Project →
-                </a>
+                <a1 href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+<em>View Project</em>
+							<i>&#10095;&#10095;</i>                </a1>
               </div>
             </li>
 
@@ -2344,94 +2960,213 @@
                 <p class="project-description">
                   News aggregator app with personalized feed, offline reading, and text-to-speech. Implements MVVM architecture with clean separation of concerns.
                 </p>
-                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-                  View Project →
-                </a>
+                <a1 href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+<em>View Project</em>
+							<i>&#10095;&#10095;</i>                </a1>
               </div>
             </li>
           </ul>
         </section>
       </article>
 
-      <!-- ===== BLOG ===== -->
+      <!--
+        - #BLOG
+      -->
+
       <article class="blog" data-page="blog">
-        <header><h2 class="h2 article-title">Blog</h2></header>
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
 
         <section class="blog-posts">
+
           <ul class="blog-posts-list">
-            <li class="blog-post-item">
-              <a href="#">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Building Modern Android Apps" loading="lazy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Android</p>
-                    <span class="dot"></span>
-                    <time datetime="2025-03-15">Mar 15, 2025</time>
-                  </div>
-                  <h3 class="h3 blog-item-title">Building Modern Android Apps with Jetpack Compose</h3>
-                  <p class="blog-text">Exploring the latest features and best practices for building beautiful, performant Android applications.</p>
-                </div>
-              </a>
-            </li>
 
             <li class="blog-post-item">
               <a href="#">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Full-Stack Development" loading="lazy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Web Dev</p>
-                    <span class="dot"></span>
-                    <time datetime="2025-03-01">Mar 01, 2025</time>
-                  </div>
-                  <h3 class="h3 blog-item-title">Full-Stack Development in 2025</h3>
-                  <p class="blog-text">A comprehensive guide to modern full-stack development tools and frameworks.</p>
-                </div>
-              </a>
-            </li>
 
-            <li class="blog-post-item">
-              <a href="#">
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Kotlin Coroutines" loading="lazy">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
                 </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Kotlin</p>
-                    <span class="dot"></span>
-                    <time datetime="2025-02-20">Feb 20, 2025</time>
-                  </div>
-                  <h3 class="h3 blog-item-title">Mastering Kotlin Coroutines</h3>
-                  <p class="blog-text">Deep dive into asynchronous programming with Kotlin Coroutines and Flow.</p>
-                </div>
-              </a>
-            </li>
 
-            <li class="blog-post-item">
-              <a href="#">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI/UX Trends" loading="lazy">
-                </figure>
                 <div class="blog-content">
+
                   <div class="blog-meta">
                     <p class="blog-category">Design</p>
+
                     <span class="dot"></span>
-                    <time datetime="2025-02-10">Feb 10, 2025</time>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
                   </div>
-                  <h3 class="h3 blog-item-title">UI/UX Design Trends for 2025</h3>
-                  <p class="blog-text">Latest design patterns and user experience principles shaping modern applications.</p>
+
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
                 </div>
+
               </a>
             </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                  <p class="blog-text">
+                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                  </p>
+
+                </div>
+
+              </a>
+              
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+
+                  <p class="blog-text">
+                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+
+                  <p class="blog-text">
+                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                  <p class="blog-text">
+                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
           </ul>
+
         </section>
+
       </article>
 
       <!-- ===== CONTACT ===== -->
       <article class="contact" data-page="contact">
+            <div class="current-info" id="Info">Loading...</div>
+
+            <div class="h4 timeline-item-title" >
+              <a href="#" id="UrlInfo" target="_blank">Detecting Url</a>
+                    <span id="copyHint">Copy Website Link</span>
+            </div>
+
         <header><h2 class="h2 article-title">Contact</h2></header>
 
         <section class="contact-form">
@@ -2446,6 +3181,27 @@
               <span>Send Message</span>
             </button>
           </form>
+        </section>
+        <!-- Newsletter Signup -->
+        <section class="newsletter">
+          
+            <div class="newsletter-content">
+                <h4 class="newsletter-title">
+                    <span class="lincon-accent">⟩</span> Stay in the Loop
+                </h4>
+                <p class="newsletter-desc">Get updates on new features, integrations, and Lincons wisdom. No spam, unsubscribe anytime.</p>
+                <form class="newsletter-form" action="#" method="post" target="_blank">
+                    <input type="hidden" name="tag" value="clawdbot">
+                    <input type="email" name="email" placeholder="your@email.com" required class="newsletter-input" aria-label="Email address">
+                    <button type="submit" class="newsletter-btn">
+                        Subscribe
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </section>
       </article>
     </div>
@@ -2619,7 +3375,42 @@ function openAI(platform) {
 
     /* ===== HELPER FUNCTIONS ===== */
     const elementToggleFunc = elem => elem.classList.toggle("active");
+function updateInfo() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const dayName = dayNames[now.getDay()];
+      const date = now.toLocaleDateString(); // Format date as MM/DD/YYYY
+        let base = window.location.origin + window.location.pathname;
 
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      const infoString = `Time: ${timeString} | Date: ${date} | Day: ${dayName}`;
+      const urlPath = `${base}`;
+      const urlTruncated = urlPath.length > 35 ? urlPath.substring(0, 30) + '…' : urlPath;
+      document.getElementById('Info').textContent = infoString;
+
+                  const copyHint = document.getElementById('copyHint');
+
+copyHint.addEventListener('click', function() {
+        let url = base;
+        if (url && url !== '#') {
+          navigator.clipboard.writeText(url).then(() => {
+            copyHint.innerHTML = 'Copied!';
+            setTimeout(() => { copyHint.innerHTML = 'Copy Website Link'; }, 1500);
+          });
+        }
+      });
+      document.getElementById('UrlInfo').textContent = urlTruncated ;
+
+    }
+
+    // Update info every second
+    setInterval(updateInfo, 1000);
+
+    // Initial call to set info immediately
+    updateInfo();
     /* ===== SIDEBAR ===== */
     const sidebar = document.querySelector("[data-sidebar]");
     const sidebarBtn = document.querySelector("[data-sidebar-btn]");
